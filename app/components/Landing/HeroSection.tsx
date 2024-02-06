@@ -1,4 +1,3 @@
-import React from "react";
 import { MainContainer } from "../partials";
 import Image from "next/image";
 import Home1 from "@/public/icons/Home1.png";

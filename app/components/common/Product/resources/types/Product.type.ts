@@ -8,5 +8,7 @@ interface ProductType extends OfficialType {
   status: string;
   landSize: number;
   city: string;
+  rate: string;
+  houseStyle: string;
 }
 export default ProductType;

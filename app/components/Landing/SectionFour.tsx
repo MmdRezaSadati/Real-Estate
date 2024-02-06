@@ -1,4 +1,3 @@
-import React from "react";
 import { BigImage, SuperSale, XTitle } from "../common";
 import ImageSrc from "@/public/images/house4.webp";
 import { MainContainer } from "../partials";

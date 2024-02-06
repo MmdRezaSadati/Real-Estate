@@ -1,4 +1,3 @@
-import React from "react";
 import { XTitleType } from "./resources";
 
 const XTitle = ({ children, important, size, weight,color}: XTitleType) => {

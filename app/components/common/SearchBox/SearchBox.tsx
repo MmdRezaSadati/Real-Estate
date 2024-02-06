@@ -1,9 +1,12 @@
 import { Button } from "@mui/material";
-import React from "react";
 
-const SearchBox = ({isHero}:{isHero?:Boolean}) => {
+const SearchBox = ({ isHero }: { isHero?: Boolean }) => {
   return (
-    <div className={`p-2 ${isHero?'bg-slate-300':'bg-slate-100'} w-full rounded-xl`}>
+    <div
+      className={`p-2 ${
+        isHero ? "bg-slate-300" : "bg-slate-100"
+      } w-full rounded-xl`}
+    >
       <form className="overflow-hidden relative rounded-lg flex justify-between bg-white">
         <input
           type="text"

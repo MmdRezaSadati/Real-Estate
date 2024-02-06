@@ -1,4 +1,3 @@
-import React from "react";
 import { MainContainer } from "../partials";
 import { BigImage, BlurMenu, SearchBox } from "../common";
 import ImageSrc from "@/public/images/House3.jpg";

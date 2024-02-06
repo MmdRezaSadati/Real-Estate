@@ -1,4 +1,3 @@
-import React from "react";
 import { BlurMenuType } from "./resources";
 import Link from "next/link";
 

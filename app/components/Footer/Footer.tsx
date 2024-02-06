@@ -1,4 +1,3 @@
-import React from "react";
 import { MainContainer } from "../partials";
 
 import logoSrc from "@/public/images/logo-white.svg";
@@ -24,6 +23,7 @@ const Footer = () => {
       isPrompt: false,
       city: "New York",
       caption: "its awesome!",
+      houseStyle: "apartment",
     },
     {
       id: "2",
@@ -37,6 +37,7 @@ const Footer = () => {
       landSize: 130,
       city: "Los Angeles",
       caption: "its best!",
+      houseStyle: "villa",
     },
     {
       id: "3",
@@ -50,10 +51,11 @@ const Footer = () => {
       landSize: 130,
       city: "Texas",
       caption: "its nice!",
+      houseStyle: "villa",
     },
   ];
   return (
-    <footer className="bg-corbeau-900 w-full pt-14 relative pb-10">
+    <footer className="bg-corbeau-900 w-full pt-14 relative pb-10 overflow-hidden">
       <div className="w-72 absolute -top-32 right-1/4 blur-[100px] z-0 shadow-slate-700 shadow-2xl bg-blue-100 bg-opacity-25 h-72"></div>
       <div className="w-64 absolute bottom-0 -left-40  blur-[95px] z-0 shadow-slate-700 shadow-2xl bg-blue-100 bg-opacity-25 h-64"></div>
       <MainContainer>

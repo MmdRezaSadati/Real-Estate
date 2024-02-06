@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { ProductItemType } from "..";
 import { SeparationNumber } from "@/app/core/utils";
 import Link from "next/link";
@@ -20,10 +19,10 @@ const ProductItem = ({
         className="w-20 h-16 rounded-t-[80px] rounded-b-2xl object-cover"
       />
       <div className="flex flex-col gap-0 px-2">
-        <Link href={"/estates/" + id} className="font-bold text-xl">
+        <Link href={"/estates/" + id} className="font-semibold3 text-xl">
           {estateName}
         </Link>
-        <h3 className="font-bold px-2">
+        <h3 className="font-semibold px-2">
           {typeof price == "number" ? "$ " + SeparationNumber(price) : price}
           {typeof price == "number" && status == "Rent"
             ? " per Month"

@@ -1,4 +1,3 @@
-import React from "react";
 import { SuperSaleType } from "./resources";
 
 const SuperSale = ({

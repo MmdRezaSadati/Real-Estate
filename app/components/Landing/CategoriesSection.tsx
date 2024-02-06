@@ -1,4 +1,3 @@
-import React from "react";
 import { MainContainer } from "../partials";
 import { BigImage, SuperSale, XTitle } from "../common";
 import ImageSrc from "@/public/images/House2.jpg";

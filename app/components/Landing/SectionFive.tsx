@@ -1,4 +1,3 @@
-import React from "react";
 import CountertopsTwoToneIcon from "@mui/icons-material/CountertopsTwoTone";
 import { MainContainer } from "../partials";
 import { Product, XTitle } from "../common";

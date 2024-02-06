@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { Button } from "@mui/material";
 
 import { NAVBAR_ITEMS } from "@/app/core/constants";
