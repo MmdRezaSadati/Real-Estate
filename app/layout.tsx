@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="bg-white relative overflow-x-hidden">
+      <body className="bg-slate-100 relative overflow-x-hidden">
         <Header />
         <main>{children}</main>
         <Footer />

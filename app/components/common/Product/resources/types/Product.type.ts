@@ -4,7 +4,7 @@ import { OfficialType } from "..";
 interface ProductType extends OfficialType {
   isPrompt: boolean;
   rooms: number;
-  price: number | string;
+  price: number;
   status: string;
   landSize: number;
   city: string;

@@ -1,6 +1,7 @@
 "use client";
 import { SeparationNumber } from "@/app/core/utils";
 import { Slider } from "@mui/material";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, useState } from "react";
 
 function valuetext(value: number) {
@@ -9,13 +10,11 @@ function valuetext(value: number) {
 const minDistance = 50000;
 
 const SliderRange = () => {
-  const [value2, setValue2] = useState<number[]>([0, 500000]);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [value2, setValue2] = useState<any[]>([0, 500000]);
 
-  const handleChange = (
-    event: Event,
-    newValue: number | number[],
-    activeThumb: number
-  ) => {
+  const handleChange = (event: Event, newValue: any, activeThumb: number) => {
     if (!Array.isArray(newValue)) {
       return;
     }
@@ -31,6 +30,17 @@ const SliderRange = () => {
     } else {
       setValue2(newValue as number[]);
     }
+
+    const params = new URLSearchParams();
+
+    searchParams.get("houseStyle") &&
+      params.append("houseStyle", searchParams.get("houseStyle")!);
+    searchParams.get("searchParams") &&
+      params.append("searchParams", searchParams.get("searchParams")!);
+    params.append("priceFrom", newValue[0]);
+    params.append("priceTo", newValue[1]);
+    const query = params.size ? "?" + params.toString() : "";
+    router.push("/estates" + query);
   };
   return (
     <Fragment>

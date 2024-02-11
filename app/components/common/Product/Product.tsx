@@ -49,7 +49,7 @@ const Product = ({
         </div>
         <h4 className="text-xl font-semibold mt-1">
           <span className="text-blue-700">
-            {typeof price == "number" ? "$" + SeparationNumber(price) : price}
+            {price > 0 ? "$" + SeparationNumber(price) : "an argument"}
           </span>
           {typeof price == "number" && status == "Rent"
             ? " per Month"

@@ -46,8 +46,8 @@ const CategoriesSection = () => {
               shadow="big-image-shadow2"
               src={ImageSrc}
               alt={"home 2"}
-              width={"w-[400px]"}
-              height={"h-[550px]"}
+              width={"w-[550px]"}
+              height={"h-[580px]"}
             />
           </div>
         </div>

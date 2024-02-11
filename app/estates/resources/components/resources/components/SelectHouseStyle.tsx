@@ -2,26 +2,44 @@
 import { FormControl, InputLabel } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
+const STYLES = [
+  { name: "All" },
+  {
+    name: "Villa",
+    value: "2",
+  },
+  {
+    value: "1",
+    name: "Apartment",
+  },
+  {
+    name: "Land",
+    value: "3",
+  },
+];
+
 const SelectHouseStyle = () => {
-  const STYLES = [
-    {
-      name: "Villa",
-      value: 1,
-    },
-    {
-      name: "Apartment",
-      value: 2,
-    },
-    {
-      name: "Land",
-      value: 3,
-    },
-  ];
-  const [age, setAge] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [style, setStyle] = useState("");
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    const params = new URLSearchParams();
+    const selectValue = event.target.value;
+    selectValue && params.append("houseStyle", selectValue);
+
+    searchParams.get("priceFrom") &&
+      params.append("priceFrom", searchParams.get("priceFrom")!);
+    searchParams.get("priceTo") &&
+      params.append("priceTo", searchParams.get("priceTo")!);
+    searchParams.get("searchParams") &&
+      params.append("searchParams", searchParams.get("searchParams")!);
+
+    const query = params.size ? "?" + params.toString() : "";
+    router.push("/estates" + query);
+    setStyle(selectValue as string);
   };
   return (
     <FormControl fullWidth>
@@ -30,8 +48,9 @@ const SelectHouseStyle = () => {
         labelId="demo-simple-select-label"
         id="demo-simple-select"
         className="w-full text-slate-800"
-        value={age}
+        value={style}
         label={"House Style"}
+        defaultValue={searchParams.get("houseStyle") || ""!}
         onChange={handleChange}
       >
         {STYLES.map((item, index) => (

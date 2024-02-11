@@ -55,9 +55,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="bg-corbeau-900 w-full pt-14 relative pb-10 overflow-hidden">
-      <div className="w-72 absolute -top-32 right-1/4 blur-[100px] z-0 shadow-slate-700 shadow-2xl bg-blue-100 bg-opacity-25 h-72"></div>
-      <div className="w-64 absolute bottom-0 -left-40  blur-[95px] z-0 shadow-slate-700 shadow-2xl bg-blue-100 bg-opacity-25 h-64"></div>
+    <footer className="bg-corbeau-900 after:w-72 after:absolute after:-top-32 after:right-1/4 after:blur-[100px] after:z-0 after:shadow-slate-700 after:shadow-2xl after:bg-blue-100 after:bg-opacity-25 after:h-72 w-full pt-14 relative pb-10 overflow-hidden before:w-64 before:absolute before:bottom-0 before:-left-40  before:blur-[95px] before:z-0 before:shadow-slate-700 before:shadow-2xl before:bg-blue-100 before:bg-opacity-25 before:h-64">
       <MainContainer>
         <div className="flex md:flex-nowrap relative z-10 flex-wrap md:gap-5 mb-10">
           <div className="w-4/12">

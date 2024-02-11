@@ -1,3 +1,3 @@
 import FilterBox from "./components/FilterBox";
-
-export { FilterBox };
+import type SearchParamsType from "./types/SearchParams.type";
+export { FilterBox, SearchParamsType };

@@ -5,70 +5,94 @@ import { MainContainer } from "../components/partials";
 import House1 from "@/public/images/House1.png";
 import House2 from "@/public/images/House2.jpg";
 import House3 from "@/public/images/House3.jpg";
-import { FilterBox } from "./resources";
-const Estates = () => {
-  const ESTATES = [
-    {
-      id: "1",
-      imageSrc: House1,
-      estateName: "Estate name 1",
-      view: 150,
-      price: 1500,
-      rooms: 2,
-      status: "Rent",
-      landSize: 80,
-      isPrompt: false,
-      city: "New York",
-      caption: "its awesome!",
-      houseStyle: "apartment",
-      rate: "4.50",
-      bathrooms: 3,
-      guests: 5,
-    },
-    {
-      id: "2",
-      imageSrc: House2,
-      estateName: "Estate name 3",
-      view: 250,
-      price: 2500000,
-      rooms: 1,
-      isPrompt: true,
-      status: "Buy",
-      landSize: 130,
-      city: "Los Angeles",
-      caption: "its best!",
-      houseStyle: "villa",
-      rate: "4.20",
-      bathrooms: 1,
-      guests: 3,
-    },
-    {
-      id: "3",
-      imageSrc: House3,
-      estateName: "Estate name 3",
-      view: 350,
-      isPrompt: false,
-      price: "an agreement",
-      rooms: 3,
-      status: "Rent",
-      landSize: 130,
-      city: "Texas",
-      caption: "its nice!",
-      houseStyle: "villa",
-      rate: "2.50",
-      bathrooms: 1,
-      guests: 6,
-    },
-  ];
+import { FilterBox, SearchParamsType } from "./resources";
+
+const ESTATES = [
+  {
+    id: "1",
+    imageSrc: House1,
+    estateName: "new York apartment",
+    view: 150,
+    price: 150000,
+    rooms: 2,
+    status: "Rent",
+    landSize: 80,
+    isPrompt: false,
+    city: "New York",
+    caption: "its awesome!",
+    houseStyle: "apartment",
+    houseId: "1",
+    rate: "4.50",
+    bathrooms: 3,
+    guests: 5,
+  },
+  {
+    id: "2",
+    imageSrc: House2,
+    estateName: "Villa",
+    view: 250,
+    price: 250000,
+    rooms: 1,
+    isPrompt: true,
+    status: "Buy",
+    landSize: 130,
+    city: "Los Angeles",
+    caption: "its best!",
+    houseStyle: "villa",
+    houseId: "2",
+    rate: "4.20",
+    bathrooms: 1,
+    guests: 3,
+  },
+  {
+    id: "3",
+    imageSrc: House3,
+    estateName: "Texas Villa",
+    view: 350,
+    isPrompt: false,
+    price: 0,
+    rooms: 3,
+    status: "Rent",
+    landSize: 130,
+    city: "Texas",
+    caption: "its nice!",
+    houseStyle: "villa",
+    houseId: "3",
+    rate: "2.50",
+    bathrooms: 1,
+    guests: 6,
+  },
+];
+
+const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
+  const houseStyle = searchParams.houseStyle ? searchParams.houseStyle : "";
+  const searchParam = searchParams.searchParams
+    ? searchParams.searchParams
+    : "";
+  const priceFrom = searchParams.priceFrom
+    ? parseInt(searchParams.priceFrom)
+    : 0;
+  const priceTo = searchParams.priceTo
+    ? parseInt(searchParams.priceTo)
+    : 5000000;
+  console.log(searchParams.searchParams);
+  const ESTATES_FILTERED = ESTATES.filter((item) => {
+    return (
+      item.houseId.includes(houseStyle) &&
+      item.estateName.toLowerCase().includes(searchParam.toLowerCase()) &&
+      item.price >= priceFrom! &&
+      item.price <= priceTo!
+    );
+  });
+  console.log(ESTATES_FILTERED);
   return (
     <Fragment>
       <MainContainer>
         <FilterBox />
-        <div></div>
       </MainContainer>
-      <div className="bg-slate-300 px-5 py-8">
+      <div className="bg-corbeau-500 bg-opacity-10  px-5 py-8">
         <MainContainer className="flex gap-5 justify-center flex-wrap">
-          {ESTATES.map((item, index) => (
+          {ESTATES_FILTERED.map((item, index) => (
             <Product
               key={index}
               isPrompt={item.isPrompt}

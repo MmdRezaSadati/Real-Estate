@@ -13,7 +13,9 @@ const BigImage = ({
     <Image
       src={src}
       alt={alt}
-      className={`${className} ${width} ${height} ${shadow}  object-cover rounded-b-[800px] rounded-t-full`}
+      className={`${className ? className : ""} ${width ? width : ""} ${
+        height ? height : ""
+      } ${shadow ? shadow : ""}  object-cover rounded-b-[800px] rounded-t-full`}
     />
   );
 };

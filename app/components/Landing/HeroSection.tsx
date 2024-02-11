@@ -1,6 +1,7 @@
 import { MainContainer } from "../partials";
 import Image from "next/image";
 import Home1 from "@/public/icons/Home1.png";
+// import Home2 from "@/public/icons/home2.svg";
 import { BigImage, BlurMenu, SearchBox, SuperSale, XTitle } from "../common";
 import BigImageSrc from "@/public/images/House1.png";
 import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
@@ -19,7 +20,7 @@ const HeroSection = () => {
     },
     {
       src: Home1,
-      text: "For Rant",
+      text: "For Rent ",
     },
   ];
   const MENU_ITEMS = [
@@ -50,9 +51,7 @@ const HeroSection = () => {
     </div>
   ));
   return (
-    <div className="flex w-full relative  bg-corbeau-900">
-      <div className="w-52 absolute top-52 left-1 blur-[120px] shadow-white shadow-2xl bg-blue-100 bg-opacity-30 z-0 h-52"></div>
-      <div className="w-64 absolute top-0 right-1/3 blur-[90px] shadow-white shadow-2xl bg-blue-100 bg-opacity-30 z-20 h-64"></div>
+    <div className="flex w-full relative  bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-20 before:h-64 ">
       <MainContainer className="flex pt-14 z-10 relative px-28 justify-center gap-10">
         <div className="w-1/2 flex flex-col items-start gap-10 px-5">
           <XTitle

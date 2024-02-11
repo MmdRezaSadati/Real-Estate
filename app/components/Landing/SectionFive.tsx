@@ -19,6 +19,10 @@ const SectionFive = () => {
       isPrompt: false,
       city: "New York",
       caption: "its awesome!",
+      houseStyle: "apartment",
+      rate: "4.50",
+      bathrooms: 3,
+      guests: 5,
     },
     {
       id: "2",
@@ -32,6 +36,10 @@ const SectionFive = () => {
       landSize: 130,
       city: "Los Angeles",
       caption: "its best!",
+      houseStyle: "villa",
+      rate: "4.20",
+      bathrooms: 1,
+      guests: 3,
     },
     {
       id: "3",
@@ -45,10 +53,14 @@ const SectionFive = () => {
       landSize: 130,
       city: "Texas",
       caption: "its nice!",
+      houseStyle: "villa",
+      rate: "2.50",
+      bathrooms: 1,
+      guests: 6,
     },
   ];
   return (
-    <div className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-50">
+    <div className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
       <MainContainer>
         <CountertopsTwoToneIcon
           className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
@@ -80,6 +92,8 @@ const SectionFive = () => {
                 estateName={item.estateName}
                 view={item.view}
                 id={item.id}
+                rate={item.rate}
+                houseStyle={item.houseStyle}
               />
             ))}
           </div>

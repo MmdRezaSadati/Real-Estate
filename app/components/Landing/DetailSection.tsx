@@ -41,7 +41,7 @@ const DetailSection = () => {
     },
   ];
   return (
-    <div className="w-full py-16 mt-20 overflow-hidden relative z-10 bg-blue-50">
+    <div className="w-full py-16 mt-20 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
       <MainContainer className="flex">
         <HomeWorkOutlinedIcon
           className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
