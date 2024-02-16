@@ -2,9 +2,9 @@ import { StaticImageData } from "next/image";
 
 interface ProductItemType {
   id: string;
-  imageSrc: StaticImageData;
+  imageSrc: StaticImageData | any;
   estateName: string;
-  price: string | number;
+  price: number;
   caption: string;
   status: string;
 }

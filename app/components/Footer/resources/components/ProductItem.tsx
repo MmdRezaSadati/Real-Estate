@@ -14,7 +14,7 @@ const ProductItem = ({
   return (
     <div className="flex">
       <Image
-        src={imageSrc}
+        src={imageSrc[0]!}
         alt={estateName}
         className="w-20 h-16 rounded-t-[80px] rounded-b-2xl object-cover"
       />
@@ -23,8 +23,8 @@ const ProductItem = ({
           {estateName}
         </Link>
         <h3 className="font-semibold px-2">
-          {typeof price == "number" ? "$ " + SeparationNumber(price) : price}
-          {typeof price == "number" && status == "Rent"
+          {price !== 0 ? "$ " + SeparationNumber(price) : "an argument "}
+          {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}
         </h3>

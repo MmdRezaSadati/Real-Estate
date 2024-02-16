@@ -3,57 +3,10 @@ import { MainContainer } from "../partials";
 import logoSrc from "@/public/images/logo-white.svg";
 import Image from "next/image";
 import { Menu, ProductItem } from "./resources";
-import { CONTACT, NAVBAR_ITEMS } from "@/app/core/constants";
-import House1 from "@/public/images/House1.png";
-import House2 from "@/public/images/House2.jpg";
-import House3 from "@/public/images/House3.jpg";
+import { CONTACT, ESTATES, NAVBAR_ITEMS } from "@/app/core/constants";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import Link from "next/link";
 const Footer = () => {
-  const ESTATES = [
-    {
-      id: "1",
-      imageSrc: House1,
-      estateName: "Estate name 1",
-      view: 150,
-      price: 1500,
-      rooms: 2,
-      status: "Rent",
-      landSize: 80,
-      isPrompt: false,
-      city: "New York",
-      caption: "its awesome!",
-      houseStyle: "apartment",
-    },
-    {
-      id: "2",
-      imageSrc: House2,
-      estateName: "Estate name 3",
-      view: 250,
-      price: 2500000,
-      rooms: 1,
-      isPrompt: true,
-      status: "Buy",
-      landSize: 130,
-      city: "Los Angeles",
-      caption: "its best!",
-      houseStyle: "villa",
-    },
-    {
-      id: "3",
-      imageSrc: House3,
-      estateName: "Estate name 3",
-      view: 350,
-      isPrompt: false,
-      price: "an agreement",
-      rooms: 3,
-      status: "Rent",
-      landSize: 130,
-      city: "Texas",
-      caption: "its nice!",
-      houseStyle: "villa",
-    },
-  ];
   return (
     <footer className="bg-corbeau-900 after:w-72 after:absolute after:-top-32 after:right-1/4 after:blur-[100px] after:z-0 after:shadow-slate-700 after:shadow-2xl after:bg-blue-100 after:bg-opacity-25 after:h-72 w-full pt-14 relative pb-10 overflow-hidden before:w-64 before:absolute before:bottom-0 before:-left-40  before:blur-[95px] before:z-0 before:shadow-slate-700 before:shadow-2xl before:bg-blue-100 before:bg-opacity-25 before:h-64">
       <MainContainer>

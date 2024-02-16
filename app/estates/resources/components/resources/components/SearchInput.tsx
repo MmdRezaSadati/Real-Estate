@@ -11,9 +11,9 @@ const SearchInput = () => {
       params.append("houseStyle", searchParams.get("houseStyle")!);
     searchParams.get("priceFrom") &&
       params.append("priceFrom", searchParams.get("priceFrom")!);
-      searchParams.get("priceTo") &&
-        params.append("priceTo", searchParams.get("priceTo")!);
-    params.append("searchParams", target.value);
+    searchParams.get("priceTo") &&
+      params.append("priceTo", searchParams.get("priceTo")!);
+    target.value.length > 0 && params.append("searchParams", target.value);
 
     const query = params.size ? "?" + params.toString() : "";
     router.push("/estates" + query);

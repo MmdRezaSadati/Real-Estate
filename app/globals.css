@@ -6,6 +6,10 @@
   img {
     @apply select-none
   }
+
+  .maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact.maplibregl-compact-show {
+    @apply hidden
+  }
 }
 
 @layer components {
@@ -13,6 +17,21 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9px);
     @apply bg-white bg-opacity-30
+  }
+
+  @keyframes alert-toast {
+    0% {
+      @apply -top-20
+    }
+
+    100% {
+      @apply top-5
+    }
+  }
+
+  .alert-toast {
+    animation: alert-toast .5s;
+    @apply absolute top-5 w-1/3 text-center left-1/3
   }
 
   .form-control {
