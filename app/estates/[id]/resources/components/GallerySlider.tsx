@@ -62,7 +62,7 @@ const GallerySlider = ({
             ? images.map((image, index) => (
                 <SwiperSlide key={image.toString() + " select Image " + index}>
                   {" "}
-                  <Image alt={title} src={image} />
+                  <Image alt={title!} src={image} />
                 </SwiperSlide>
               ))
             : ""
