@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-
+import Box from "@mui/material/Box";
 const MainContainer = ({
   children,
   className,
@@ -8,13 +8,13 @@ const MainContainer = ({
   className?: string;
 }) => {
   return (
-    <div
+    <Box
       className={`min-w-[330px] max-w-[1920px] px-5 md:px-16 lg:px-24 xl:px-32 mx-auto w-full ${
         className ? className : ""
       }`}
     >
       {children}
-    </div>
+    </Box>
   );
 };
 

@@ -4,6 +4,8 @@ import ImageSrc from "@/public/images/House2.jpg";
 import ImageSrc2 from "@/public/images/House3.jpg";
 import ImageSrc3 from "@/public/images/House1.png";
 import CategoryItem from "../common/CategoryItem/CategoryItem";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 const CategoriesSection = () => {
   const CATEGORIES = [
     {
@@ -31,10 +33,10 @@ const CategoriesSection = () => {
     />
   ));
   return (
-    <div className="w-full">
+    <Box className="w-full">
       <MainContainer className="flex pt-14 px-28 justify-center gap-10">
-        <div className="w-1/3 min-w-[400px] pt-5">
-          <div className="relative group min-w-[300px] z-10 -mb-16">
+        <Box className="w-1/3 min-w-[400px] pt-5">
+          <Box className="relative group min-w-[300px] z-10 -mb-16">
             <SuperSale
               rounded="rounded-t-full"
               padding="px-5 py-6"
@@ -49,9 +51,9 @@ const CategoriesSection = () => {
               width={"w-[550px]"}
               height={"h-[580px]"}
             />
-          </div>
-        </div>
-        <div className="w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5">
+          </Box>
+        </Box>
+        <Box className="w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5">
           <XTitle
             weight="font-extrabold"
             size="text-5xl"
@@ -60,16 +62,16 @@ const CategoriesSection = () => {
           >
             Sell For More Than The Home{" "}
           </XTitle>
-          <p className="text-base font-semibold text-gray-500">
+          <Typography variant="body2" className="text-base font-semibold text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             odit rerum at vel veritatis libero consectetur soluta explicabo
             optio repellendus aspernatur, quidem ut quo illum alias impedit
             iste. Ullam, provident.
-          </p>
-          <div className="flex gap-3">{dataMapper}</div>
-        </div>
+          </Typography>
+          <Box className="flex gap-3">{dataMapper}</Box>
+        </Box>
       </MainContainer>
-    </div>
+    </Box>
   );
 };
 

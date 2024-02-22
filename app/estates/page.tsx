@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { Product } from "../components/common";
 import { MainContainer } from "../components/partials";
 
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import {
   filterEstates,
   FilterBox,
@@ -33,7 +35,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
       <MainContainer>
         <FilterBox />
       </MainContainer>
-      <div className="bg-corbeau-500 overflow-hidden relative bg-opacity-10  px-5 py-9">
+      <Box className="bg-corbeau-500 overflow-hidden relative bg-opacity-10  px-5 py-9">
         <HomeWorkOutlinedIcon
           className="absolute w-[550px] h-[550px] z-0 -top-20 text-slate-400 -left-5 opacity-10 "
           color="disabled"
@@ -41,7 +43,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
         <MainContainer className="flex gap-5 justify-center flex-wrap">
           {estateMapper(ESTATES_FILTERED)}
         </MainContainer>
-      </div>
+      </Box>
     </Fragment>
   );
 };

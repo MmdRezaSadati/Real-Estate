@@ -8,6 +8,8 @@ import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 import ApartmentIcon from "@mui/icons-material/Apartment";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 const HeroSection = () => {
   const OPTIONS = [
     {
@@ -42,18 +44,18 @@ const HeroSection = () => {
     },
   ];
   const dataMapper = OPTIONS.map((option, index) => (
-    <div
+    <Box
       key={index}
       className="flex flex-col justify-center gap-2 items-center"
     >
       <Image src={option.src} width={80} alt="Home icon" />
-      <span>{option.text}</span>
-    </div>
+      <Box component={'span'}>{option.text}</Box>
+    </Box>
   ));
   return (
-    <div className="flex w-full relative  bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-20 before:h-64 ">
+    <Box className="flex w-full relative  bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-20 before:h-64 ">
       <MainContainer className="flex pt-14 z-10 relative px-28 justify-center gap-10">
-        <div className="w-1/2 flex flex-col items-start gap-10 px-5">
+        <Box className="w-1/2 flex flex-col items-start gap-10 px-5">
           <XTitle
             weight="font-extrabold"
             size="text-7xl"
@@ -61,17 +63,17 @@ const HeroSection = () => {
           >
             Search And Tour With{" "}
           </XTitle>
-          <p className="text-sm text-gray-500">
+          <Typography className="text-sm text-gray-500">
             Get An In-Depth Look At What Your Monthly And Closing Costs Will
             Look Like Based On Your Financial Situation And Goals.{" "}
-          </p>
-          <div className="flex gap-10 justify-around md:pr-20 w-full">
+          </Typography>
+          <Box className="flex gap-10 justify-around md:pr-20 w-full">
             {dataMapper}
-          </div>
+          </Box>
           <SearchBox isHero />
-        </div>
-        <div className="w-1/2 min-w-[500px] pt-5">
-          <div className="relative group min-w-[500px] z-10 -mb-16">
+        </Box>
+        <Box className="w-1/2 min-w-[500px] pt-5">
+          <Box className="relative group min-w-[500px] z-10 -mb-16">
             <SuperSale
               rounded="rounded-t-full"
               padding="px-5 py-6"
@@ -90,10 +92,10 @@ const HeroSection = () => {
               MENU_ARRAY={MENU_ITEMS}
               className={"absolute bottom-20 -right-10"}
             />
-          </div>
-        </div>
+          </Box>
+        </Box>
       </MainContainer>
-    </div>
+    </Box>
   );
 };
 

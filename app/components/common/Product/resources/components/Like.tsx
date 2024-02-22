@@ -1,9 +1,11 @@
 "use client";
 // import  from "@mui/icons-material/Favorite";
 import { FavoriteBorderOutlined, Favorite } from "@mui/icons-material";
+
+import Box from "@mui/material/Box";
 const Like = ({ id, isFavorite }: { id: string; isFavorite: boolean }) => {
   return (
-    <div
+    <Box
       onClick={() => {
         console.log(id);
       }}
@@ -14,7 +16,7 @@ const Like = ({ id, isFavorite }: { id: string; isFavorite: boolean }) => {
       ) : (
         <FavoriteBorderOutlined fontSize="small" />
       )}
-    </div>
+    </Box>
   );
 };
 

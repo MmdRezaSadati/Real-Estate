@@ -2,13 +2,15 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ArticleType } from "./resources";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 const Article = ({ post }: ArticleType) => {
   return (
-    <div
+    <Box
       key={post.title}
       className="flex flex-col overflow-hidden w-96 rounded-lg hover:shadow-xl shadow-lg"
     >
-      <div className="flex-shrink-0">
+      <Box className="flex-shrink-0">
         <Image
           width={384}
           height={256}
@@ -16,17 +18,20 @@ const Article = ({ post }: ArticleType) => {
           src={post.imageUrl}
           alt=""
         />
-      </div>
-      <div className="flex flex-1 flex-col justify-between bg-white p-6">
-        <div className="flex-1">
-          <p className="text-sm font-medium text-indigo-600">
+      </Box>
+      <Box className="flex flex-1 flex-col justify-between bg-white p-6">
+        <Box className="flex-1">
+          <Typography
+            variant="body2"
+            className="text-sm font-medium text-indigo-600"
+          >
             <Link
               href={"blogs/categories/" + post.category.href}
               className="hover:underline"
             >
               {post.category.name}
             </Link>
-          </p>
+          </Typography>
           <Link
             href={"/blogs/" + post.id}
             className="text-xl font-semibold text-gray-900"
@@ -36,7 +41,10 @@ const Article = ({ post }: ArticleType) => {
               : post.title}
           </Link>
           {post.description.length > 100 ? (
-            <p className="mt-3 text-base text-gray-500">
+            <Typography
+              variant="body2"
+              className="mt-3 text-base text-gray-500"
+            >
               {post.description.slice(0, 100)}{" "}
               <Link
                 href={"/blogs/" + post.id + "#caption"}
@@ -44,40 +52,52 @@ const Article = ({ post }: ArticleType) => {
               >
                 more ...
               </Link>
-            </p>
+            </Typography>
           ) : (
-            <p className="mt-3 text-base text-gray-500">{post.description}</p>
+            <Typography
+              variant="body2"
+              className="mt-3 text-base text-gray-500"
+            >
+              {post.description}
+            </Typography>
           )}
-        </div>
-        <div className="mt-6 flex items-center">
-          <div className="flex-shrink-0">
+        </Box>
+        <Box className="mt-6 flex items-center">
+          <Box className="flex-shrink-0">
             <Link href={"author/" + post.author.id}>
-              <span className="sr-only">{post.author.name}</span>
+              <Box component={"span"} className="sr-only">
+                {post.author.name}
+              </Box>
               <Image
                 className="h-10 w-10 rounded-full"
                 src={post.author.imageUrl}
                 alt=""
               />
             </Link>
-          </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-gray-900">
+          </Box>
+          <Box className="ml-3">
+            <Typography
+              variant="body2"
+              className="text-sm font-medium text-gray-900"
+            >
               <Link
                 href={"author/" + post.author.id}
                 className="hover:underline"
               >
                 {post.author.name}
               </Link>
-            </p>
-            <div className="flex space-x-1 text-sm text-gray-500">
+            </Typography>
+            <Box className="flex space-x-1 text-sm text-gray-500">
               <time dateTime={post.datetime}>{post.date}</time>
-              <span aria-hidden="true">&middot;</span>
-              <span>{post.readingTime} read</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <Box component={"span"} aria-hidden="true">
+                &middot;
+              </Box>
+              <Box component={"span"}>{post.readingTime} read</Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

@@ -1,10 +1,14 @@
 import { XTitleType } from "./resources";
-
-const XTitle = ({ children, important, size, weight,color}: XTitleType) => {
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+const XTitle = ({ children, important, size, weight, color }: XTitleType) => {
   return (
-    <h2 className={`${size} ${color} ${weight}`}>
-      {children} <span className="text-blue-700">{important}</span>
-    </h2>
+    <Typography variant="h2" className={`${size} ${color} ${weight}`}>
+      {children}{" "}
+      <Box component={"span"} className="text-blue-700">
+        {important}
+      </Box>
+    </Typography>
   );
 };
 

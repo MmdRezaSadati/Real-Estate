@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
 import {
   EstatesForm,
   SearchInput,
@@ -10,15 +11,15 @@ const FilterBox = () => {
   return (
     <>
       <EstatesForm>
-        <div className="md:w-3/6 shadow-md w-full rounded-xl overflow-hidden">
+        <Box className="md:w-3/6 shadow-md w-full rounded-xl overflow-hidden">
           <SearchInput />
-        </div>
-        <div className="md:w-1/5 w-1/2 rounded-xl px-10">
+        </Box>
+        <Box className="md:w-1/5 w-1/2 rounded-xl px-10">
           <SliderRange />
-        </div>
-        <div className="md:w-1/5 w-1/2 rounded-xl">
+        </Box>
+        <Box className="md:w-1/5 w-1/2 rounded-xl">
           <SelectHouseStyle />
-        </div>
+        </Box>
       </EstatesForm>
     </>
   );

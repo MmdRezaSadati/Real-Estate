@@ -7,6 +7,7 @@ import Product from "./Product/Product";
 import SearchBox from "./SearchBox/SearchBox";
 import SearchInput from "./SearchInput/SearchInput";
 import SuperSale from "./SuperSale/SuperSale";
+import UserCard from "./UserCard/UserCard";
 import XTitle from "./XTitle/XTitle";
 
 export {
@@ -18,5 +19,7 @@ export {
   SearchBox,
   BlurMenu,
   Product,
-  SearchInput,AlertComponent
+  UserCard,
+  SearchInput,
+  AlertComponent,
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@mui/material";
-
+import Box from "@mui/material/Box";
 import { NAVBAR_ITEMS } from "@/app/core/constants";
 const Navbar = () => {
   return (
@@ -13,13 +13,15 @@ const Navbar = () => {
           {item.name}
         </Link>
       ))}
-      <div className="flex mx-5 gap-6">
+      <Box className="flex mx-5 gap-6">
         <Button
           component={Link}
           href={"#"}
           className="bg-white hover:bg-white hover:bg-opacity-90 tracking-[0.35em]"
         >
-          <span className="font-extrabold ">contact</span>
+          <Box component={"span"} className="font-extrabold ">
+            contact
+          </Box>
         </Button>
         <Button
           color="info"
@@ -28,9 +30,11 @@ const Navbar = () => {
           href={"#"}
           className="tracking-[0.35em]"
         >
-          <span className="font-extrabold ">visit now</span>
+          <Box component={"span"} className="font-extrabold ">
+            visit now
+          </Box>
         </Button>
-      </div>
+      </Box>
     </nav>
   );
 };

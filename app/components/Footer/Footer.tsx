@@ -6,23 +6,25 @@ import { Menu, ProductItem } from "./resources";
 import { CONTACT, ESTATES, NAVBAR_ITEMS } from "@/app/core/constants";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import Link from "next/link";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 const Footer = () => {
   return (
     <footer className="bg-corbeau-900 after:w-72 after:absolute after:-top-32 after:right-1/4 after:blur-[100px] after:z-0 after:shadow-slate-700 after:shadow-2xl after:bg-blue-100 after:bg-opacity-25 after:h-72 w-full pt-14 relative pb-10 overflow-hidden before:w-64 before:absolute before:bottom-0 before:-left-40  before:blur-[95px] before:z-0 before:shadow-slate-700 before:shadow-2xl before:bg-blue-100 before:bg-opacity-25 before:h-64">
       <MainContainer>
-        <div className="flex md:flex-nowrap relative z-10 flex-wrap md:gap-5 mb-10">
-          <div className="w-4/12">
+        <Box className="flex md:flex-nowrap relative z-10 flex-wrap md:gap-5 mb-10">
+          <Box className="w-4/12">
             <Image src={logoSrc} alt={"Logo"} className="scale-90 -mt-16" />
-            <p className="text-slate-300 text-lg -mt-10">
+            <Typography variant="body2" className="text-slate-300 text-lg -mt-10">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
               animi et exercitationem excepturi quos! Quidem, est aliquam
               dignissimos beatae accusamus itaque sint fugit. Voluptatibus at
               aliquid, accusamus nihil expedita dignissimos!
-            </p>
-          </div>
+            </Typography>
+          </Box>
           <Menu name={"Links"} menuItems={NAVBAR_ITEMS} />
           <Menu name={"Contact"} menuItems={CONTACT} />
-          <div className="flex flex-col gap-4 pt-2 w-4/12">
+          <Box className="flex flex-col gap-4 pt-2 w-4/12">
             {ESTATES.map((estate, index) => (
               <ProductItem
                 key={index}
@@ -34,14 +36,14 @@ const Footer = () => {
                 status={estate.status}
               />
             ))}
-          </div>
-        </div>
-        <div className="flex border-t pt-10 justify-between border-slate-500">
-          <div className="flex items-center gap-2">
+          </Box>
+        </Box>
+        <Box className="flex border-t pt-10 justify-between border-slate-500">
+          <Box className="flex items-center gap-2">
             <CopyrightIcon fontSize="small" />
             2023 All rights reserves EstataBode
-          </div>
-          <div className="flex items-center gap-2">
+          </Box>
+          <Box className="flex items-center gap-2">
             {CONTACT.map((item, index) => (
               <Link
                 href={item.href}
@@ -51,8 +53,8 @@ const Footer = () => {
                 <item.icon />
               </Link>
             ))}
-          </div>
-        </div>
+          </Box>
+        </Box>
       </MainContainer>
     </footer>
   );

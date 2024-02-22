@@ -1,8 +1,11 @@
-import { Button, Chip } from "@mui/material";
 import { SeparationNumber } from "@/app/core/utils";
-import { Like, ProductType, Prompt, ViewsCount } from "./resources";
+import { ProductType, Prompt, ViewsCount } from "./resources";
 import Link from "next/link";
 import StarIcon from "@mui/icons-material/Star";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 const Product = ({
   imageSrc,
   estateName,
@@ -18,8 +21,8 @@ const Product = ({
   houseStyle,
 }: ProductType) => {
   return (
-    <div
-      className={`sm:w-96  w-full relative scale-x-90 h-96 group shadow-2xl shadow-slate-300 hover:shadow-slate-400 hover:-translate-y-2 transition-all bg-white rounded-3xl p-3 group ${
+    <Card
+      className={`sm:w-96 !overflow-visible w-full relative scale-x-90 h-96 group shadow-2xl shadow-slate-300 hover:shadow-slate-400 hover:-translate-y-2 transition-all text-slate-100 bg-white rounded-3xl p-3 group ${
         isPrompt && "border-2 border-sky-950"
       }`}
     >
@@ -30,38 +33,48 @@ const Product = ({
         imageSrc={imageSrc}
         view={view}
       />
-      <div className="text-slate-800 p-3">
-        <div className="flex gap-1">
-          <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+      <CardContent className="text-slate-800 p-3">
+        <Box className="flex gap-1">
+          <Box
+            component={"span"}
+            className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10"
+          >
             for {status}
-          </span>{" "}
-          <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+          </Box>{" "}
+          <Box
+            component={"span"}
+            className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"
+          >
             {houseStyle}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="flex items-center gap-1">
+          </Box>
+        </Box>
+        <Box className="flex items-center gap-2">
+          <Box component={"span"} className="flex items-center gap-1">
             <StarIcon className="text-yellow-500" /> {rate}
-          </span>
+          </Box>
           <Link href={"/estates/" + id} className="text-2xl font-bold">
             {estateName}
           </Link>
-        </div>
-        <h4 className="text-xl font-semibold mt-1">
-          <span className="text-blue-700">
+        </Box>
+        <Typography variant="body2" className="text-xl font-semibold mt-1">
+          <Box component={"span"} className="text-blue-700">
             {price > 0 ? "$" + SeparationNumber(price) : "an argument"}
-          </span>
+          </Box>
           {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}
-          <span className="text-base">
+          <Box component={"span"} className="text-base">
             {"  "}| {landSize} SQFT {"  "}
-            <h4 className="inline-block font-bold">| in {city}</h4>
-          </span>
-        </h4>
-        <h4 className="text-xl font-bold">{rooms} bedrooms</h4>
-      </div>
-    </div>
+            <Typography variant="body2" className="inline-block font-bold">
+              | in {city}
+            </Typography>
+          </Box>
+        </Typography>
+        <Typography variant="body2" className="text-xl font-bold">
+          {rooms} bedrooms
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

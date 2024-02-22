@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import React, { Fragment, ReactNode, useState } from "react";
 import AlertComponent from "../Alert/AlertComponent";
 import { CheckCircleOutline } from "@mui/icons-material";
-
+import Box from "@mui/material/Box";
 const CopyHere = ({
   children,
   className,
@@ -25,7 +25,7 @@ const CopyHere = ({
           copied : {siteURL + url}{" "}
         </AlertComponent>
       )}
-      <div
+      <Box
         className={`${className} cursor-pointer`}
         onClick={() => {
           navigator.clipboard.writeText(siteURL + url);
@@ -36,7 +36,7 @@ const CopyHere = ({
         }}
       >
         {children}
-      </div>
+      </Box>
     </Fragment>
   );
 };

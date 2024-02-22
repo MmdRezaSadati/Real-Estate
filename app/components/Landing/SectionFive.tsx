@@ -2,16 +2,16 @@ import CountertopsTwoToneIcon from "@mui/icons-material/CountertopsTwoTone";
 import { MainContainer } from "../partials";
 import { Product, XTitle } from "../common";
 import { ESTATES } from "@/app/core/constants";
-
+import Box from "@mui/material/Box";
 const SectionFive = () => {
   return (
-    <div className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
+    <Box className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
       <MainContainer>
         <CountertopsTwoToneIcon
           className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
           color="disabled"
         />
-        <div>
+        <Box>
           <XTitle
             size={"text-4xl"}
             color="text-slate-900"
@@ -20,10 +20,10 @@ const SectionFive = () => {
           >
             Take The First{" "}
           </XTitle>
-          <p className="text-base my-3 font-semibold text-gray-400">
+          <Box className="text-base my-3 font-semibold text-gray-400">
             Select Your Goal And Well Guide You On Your Journey
-          </p>
-          <div className="flex w-full mt-20 justify-center gap-5">
+          </Box>
+          <Box className="flex w-full mt-20 justify-center gap-5">
             {ESTATES.map((item, index) => (
               <Product
                 key={index}
@@ -41,10 +41,10 @@ const SectionFive = () => {
                 houseStyle={item.houseStyle}
               />
             ))}
-          </div>
-        </div>
+          </Box>
+        </Box>
       </MainContainer>
-    </div>
+    </Box>
   );
 };
 

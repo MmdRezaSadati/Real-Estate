@@ -62,30 +62,30 @@ const POSTS = [
 const Blogs = () => {
   return (
     <MainContainer>
-      <div className="mx-auto form-control">
-        <div className="md:w-2/6 shadow-md w-full rounded-xl overflow-hidden">
+      <Box className="mx-auto form-control">
+        <Box className="md:w-2/6 shadow-md w-full rounded-xl overflow-hidden">
           <input
             type="text"
             className="focus:outline-0 p-3 h-full w-full text-slate-900"
             placeholder="Search What Are You Want To Read ..."
           />
-        </div>
-        <div className="md:w-1/5 w-1/2 rounded-xl px-10"></div>
-        <div className="md:w-1/5 w-1/2 rounded-xl"></div>
-        <div className="md:w-1/5 w-full">
+        </Box>
+        <Box className="md:w-1/5 w-1/2 rounded-xl px-10"></Box>
+        <Box className="md:w-1/5 w-1/2 rounded-xl"></Box>
+        <Box className="md:w-1/5 w-full">
           <Button
             type="submit"
             className="bg-blue-700 h-full rounded px-5 text-center w-full hover:bg-blue-800 text-white"
           >
             Search
           </Button>
-        </div>
-      </div>
-      <div className="flex justify-between py-5">
+        </Box>
+      </Box>
+      <Box className="flex justify-between py-5">
         {POSTS.map((post) => (
           <Article key={post.id} post={post} />
         ))}
-      </div>
+      </Box>
     </MainContainer>
   );
 };

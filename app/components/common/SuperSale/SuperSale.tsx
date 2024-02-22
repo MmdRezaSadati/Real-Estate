@@ -1,5 +1,5 @@
 import { SuperSaleType } from "./resources";
-
+import Box from "@mui/material/Box";
 const SuperSale = ({
   children,
   className,
@@ -7,17 +7,17 @@ const SuperSale = ({
   padding,
 }: SuperSaleType) => {
   return (
-    <div
+    <Box
       className={`blur-section group-hover:animate-bounceAnimation p-2 ${rounded} overflow-hidden select-none ${className}`}
     >
-      <div className={`p-2  ${rounded} bg-white w-full h-full`}>
-        <div
+      <Box className={`p-2  ${rounded} bg-white w-full h-full`}>
+        <Box
           className={`bg-blue-700 ${rounded} ${padding} font-bold text-center text-white text-2xl w-full h-full`}
         >
           {children}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

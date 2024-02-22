@@ -3,7 +3,7 @@ import { SeparationNumber } from "@/app/core/utils";
 import { Slider } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, useState } from "react";
-
+import Typography from "@mui/material/Typography";
 function valuetext(value: number) {
   return `${SeparationNumber(value)} $`;
 }
@@ -44,9 +44,12 @@ const SliderRange = () => {
   };
   return (
     <Fragment>
-      <strong className="text-slate-900 whitespace-nowrap">
+      <Typography
+        variant="caption"
+        className="text-slate-900 whitespace-nowrap"
+      >
         price: {valuetext(value2[0]) + " to " + valuetext(value2[1])}
-      </strong>
+      </Typography>
       <Slider
         value={value2}
         max={500000}
