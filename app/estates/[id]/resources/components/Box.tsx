@@ -1,15 +1,16 @@
 import BoxTypes from "../types/Box.type";
 
-const Box = ({ children, className }: BoxTypes) => {
+import Box from "@mui/material/Box";
+const BoxComponent = ({ children, className }: BoxTypes) => {
   return (
-    <div
+    <Box
       className={`${
         className ? className : ""
       } bg-white shadow-md my-3 shadow-slate-300/50 p-7 rounded-lg`}
     >
       {children}
-    </div>
+    </Box>
   );
 };
 
-export default Box;
+export default BoxComponent;
