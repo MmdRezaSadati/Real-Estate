@@ -2,12 +2,12 @@ import { MenuType } from "..";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 const Menu = ({ menuItems, name }: MenuType) => {
   return (
-    <Box className="w-2/12">
+    <Box className="w-full lg:w-2/12">
       <Typography
         variant="h2"
         className="text-2xl font-bold mt-2 border-b-2 pb-5 "

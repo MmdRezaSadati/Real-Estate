@@ -26,7 +26,7 @@ const SectionFive = () => {
             Select Your Goal And Well Guide You On Your Journey
           </Box>
           <Box className="flex w-full mt-20 justify-center gap-5">
-            {<EstatesSlider ESTATES={ESTATES}/>}
+            {<EstatesSlider className={'mySwiperSlider'} ESTATES={ESTATES}/>}
           </Box>
         </Box>
       </MainContainer>

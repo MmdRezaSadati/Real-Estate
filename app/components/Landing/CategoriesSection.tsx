@@ -68,7 +68,7 @@ const CategoriesSection = () => {
             iste. Ullam, provident.
           </Typography>
           <Box className="flex relative text-left px-3 w-full gap-3">
-            <CategorySlider CATEGORIES={CATEGORIES} />
+            <CategorySlider className="" CATEGORIES={CATEGORIES} />
           </Box>
         </Box>
       </MainContainer>

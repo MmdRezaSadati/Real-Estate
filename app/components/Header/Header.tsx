@@ -7,16 +7,16 @@ import { Navbar } from "./resources";
 import Box from "@mui/material/Box";
 const Header = () => {
   return (
-    <header className="w-ful dark:bg-corbeau-500 bg- px-5">
+    <Box component={"header"} className="w-full relative bg-corbeau-500 bg- px-5">
       <MainContainer>
         <Box className="justify-between flex items-center">
           <Link href={"/"}>
-            <Image src={logo} alt={""} width={250} height={80} />
+            <Image src={logo} alt={""} className="min-w-48 w-48" />
           </Link>
           <Navbar />
         </Box>
       </MainContainer>
-    </header>
+    </Box>
   );
 };
 

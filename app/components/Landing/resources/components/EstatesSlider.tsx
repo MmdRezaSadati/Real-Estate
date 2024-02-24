@@ -5,11 +5,21 @@ import { SwiperSlide } from "swiper/react";
 import { ProductType } from "@/app/core/types";
 import { Product } from "@/app/components/common";
 
-const EstatesSlider = ({ ESTATES }: { ESTATES: ProductType[] }) => {
+const EstatesSlider = ({
+  ESTATES,
+  className,
+}: {
+  ESTATES: ProductType[];
+  className?: string;
+}) => {
   return (
     <Slider
+      className={className}
       mapper={ESTATES.map((item, index) => (
-        <SwiperSlide className="py-10" key={item.estateName + " ESTATES Item " + index}>
+        <SwiperSlide
+          className="py-10"
+          key={item.estateName + " ESTATES Item " + index}
+        >
           <Product
             isPrompt={item.isPrompt}
             rooms={item.rooms}

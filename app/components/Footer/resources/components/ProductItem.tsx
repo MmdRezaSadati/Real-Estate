@@ -14,7 +14,7 @@ const ProductItem = ({
   status,
 }: ProductItemType) => {
   return (
-    <Box className="flex">
+    <Box className="flex lg:w-auto w-full">
       <Image
         src={imageSrc[0]!}
         alt={estateName}

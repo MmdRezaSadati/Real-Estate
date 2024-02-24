@@ -54,7 +54,7 @@ const HeroSection = () => {
     </Box>
   ));
   return (
-    <Box className="flex w-full relative bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-20 before:h-64 ">
+    <Box className="flex w-full relative bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 sm:before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-40 before:h-64 ">
       <MainContainer className="flex sm:flex-row flex-col pt-14 z-10 relative px-28 justify-center gap-10">
         <Box className="w-full sm:w-1/2 flex flex-col items-start gap-10 px-5 sm:text-left text-center">
           <XTitle

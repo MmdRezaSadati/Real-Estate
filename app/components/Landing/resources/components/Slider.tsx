@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "../styles/slider.style.css";
-const Slider = ({ mapper }: { mapper: any }) => {
+const Slider = ({ mapper, className }: { mapper: any; className?: string }) => {
   return (
     <>
       <Swiper
@@ -19,7 +19,9 @@ const Slider = ({ mapper }: { mapper: any }) => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiperSlider xl:!block !hidden"
+        className={`${
+          className ? className : ""
+        } xl:!block !hidden`}
       >
         {mapper}
       </Swiper>
@@ -30,7 +32,9 @@ const Slider = ({ mapper }: { mapper: any }) => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiperSlider gap-10 sm:!block xl:!hidden !hidden"
+        className={`${
+          className ? className : ""
+        } gap-10 sm:!block xl:!hidden !hidden`}
       >
         {mapper}
       </Swiper>
@@ -41,7 +45,9 @@ const Slider = ({ mapper }: { mapper: any }) => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiperSlider sm:!hidden block"
+        className={`${
+          className ? className : ""
+        } sm:!hidden block`}
       >
         {mapper}
       </Swiper>
