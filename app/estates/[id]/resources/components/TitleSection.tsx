@@ -20,7 +20,7 @@ const TitleSection = ({ estate }: { estate: ProductType | undefined }) => {
         <Box className="flex gap-10">
           <CopyHere className="flex gap-2" siteURL={process.env.SITE_URL!}>
             <ShareOutlinedIcon className="text-xl" />
-            <Box component={"span"} className="text-sm">
+            <Box component={"span"} className="text-sm hidden sm:inline-block">
               Share Estate
             </Box>
           </CopyHere>

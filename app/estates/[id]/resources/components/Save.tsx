@@ -5,7 +5,7 @@ const Save = () => {
   return (
     <Box className="flex gap-2 cursor-pointer">
       <BookmarkBorderOutlinedIcon className="text-xl" />
-      <Box component={"span"} className="text-sm">
+      <Box component={"span"} className="text-sm  hidden sm:inline-block">
         save
       </Box>
     </Box>

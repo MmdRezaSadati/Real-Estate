@@ -13,7 +13,7 @@ const MapComponent = ({ estate }: any) => {
         latitude: estate?.latitude ? estate.latitude : 0,
         // longitude: 53.1144672,
         // latitude: 36.55695,
-        zoom: 14,
+        zoom: 8,
       }}
       style={{ width: "100%", height: "350px" }}
       mapStyle="https://api.maptiler.com/maps/streets/style.json?key=1P0n5LEqgAAHdzo1nE6P"

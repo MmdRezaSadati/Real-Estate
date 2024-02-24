@@ -4,7 +4,7 @@
 
 @layer base {
   .mySwiper2 {
-    @apply sm:!h-[550px] h-96;
+    @apply sm:!h-[550px] !h-96;
   }
   .mySwiper .swiper-slide {
     @apply sm:h-40 h-28;
@@ -45,7 +45,7 @@
 
   .alert-toast {
     animation: alert-toast 0.5s;
-    @apply absolute top-5 w-1/3 text-center left-1/3;
+    @apply absolute top-5 md:w-1/3 sm:w-2/3 w-full text-center md:left-1/3 sm:left-1/4 left-0;
   }
 
   .form-control {
