@@ -2,7 +2,7 @@
 import Image from "next/image";
 import logo from "@/public/images/logo-white.svg";
 import Link from "next/link";
-import { MainContainer } from "../partials";
+import { MainContainer } from "..";
 import { Navbar } from "./resources";
 import Box from "@mui/material/Box";
 const Header = () => {

@@ -15,7 +15,7 @@ const CategorySlider = ({
     <Slider
       className={className}
       mapper={CATEGORIES.map((item, index) => (
-        <SwiperSlide key={item.title + " CategoryItem " + index}>
+        <SwiperSlide className='py-10' key={item.title + " CategoryItem " + index}>
           <CategoryItem
             imageSrc={item.imageSrc}
             href={item.href}

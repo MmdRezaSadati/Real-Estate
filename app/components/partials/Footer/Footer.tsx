@@ -1,4 +1,4 @@
-import { MainContainer } from "../partials";
+import { MainContainer } from "..";
 
 import logoSrc from "@/public/images/logo-white.svg";
 import Image from "next/image";

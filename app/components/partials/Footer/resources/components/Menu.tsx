@@ -20,7 +20,7 @@ const Menu = ({ menuItems, name }: MenuType) => {
             components={Link}
             href={menuItem.href}
             key={index}
-            className="text-slate-400 hover:text-slate-200"
+            className="text-slate-400 cursor-pointer hover:text-slate-200"
           >
             <ListItemText>{menuItem.name}</ListItemText>
           </ListItem>
