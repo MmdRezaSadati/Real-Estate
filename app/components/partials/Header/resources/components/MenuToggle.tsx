@@ -9,7 +9,6 @@ import { Button } from "@mui/material";
 
 const MenuToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   return (
     <Box>
       <IconButton
