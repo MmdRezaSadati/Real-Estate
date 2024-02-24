@@ -14,23 +14,23 @@ const ProductItem = ({
   status,
 }: ProductItemType) => {
   return (
-    <Box className="flex lg:w-auto w-full">
+    <Box display={"flex"} sx={{ width: { lg: "auto", xs: "100%" } }}>
       <Image
         src={imageSrc[0]!}
         alt={estateName}
         className="w-20 h-16 rounded-t-[80px] rounded-b-2xl object-cover"
       />
-      <Box className="flex flex-col gap-0 px-2">
+      <Box display={"flex"} flexDirection={"column"} gap={0} px={1}>
         <Link href={"/estates/" + id} className="font-semibold3 text-xl">
           {estateName}
         </Link>
-        <Typography variant="body2" className="font-semibold px-2">
+        <Typography fontWeight={600} px={1} variant="body2">
           {price !== 0 ? "$ " + SeparationNumberString(price) : "an argument "}
           {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}
         </Typography>
-        <Typography variant="body2" className="text-slate-400 font-semibold">
+        <Typography variant="body2" fontWeight={600} className="text-slate-400">
           {" "}
           {caption.length >= 30 ? caption.slice(0, 30) + " ..." : caption}
         </Typography>

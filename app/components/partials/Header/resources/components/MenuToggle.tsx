@@ -24,14 +24,42 @@ const MenuToggle = () => {
       {isOpen && (
         <Box
           position={"absolute"}
-          className="-bottom-58 bg-corbeau-500  flex-col p-5 flex gap-7 w-full right-0"
+          // bottom={"-264px"}
+          sx={{
+            bottom: {
+              sm: -250,
+              xs: -300,
+            },
+          }}
+          flexDirection={"column"}
+          p={2.5}
+          display={"flex"}
+          gap={3.5}
+          width={"100%"}
+          right={0}
           zIndex={39}
+          className="bg-corbeau-500"
         >
-          <Box className="sm:hidden justify-center flex lg:mx-5 gap-6">
+          <Box
+            sx={{
+              display: { sm: "none", xs: "flex" },
+              mx: { lg: "20px" },
+            }}
+            justifyContent={"center"}
+            gap={3}
+          >
             <Button
               component={Link}
               href={"#"}
-              className="bg-white md:scale-100 sm:scale-75 md:!mx-0 sm:-mr-10 sm:ml-10 hover:bg-white hover:bg-opacity-90 tracking-[0.35em]"
+              sx={{
+                scale: { md: 1, sm: 0.75 },
+                mx: { md: 0 },
+                mr: { sm: "-40px" },
+                ml: { sm: "40px" },
+                letterSpacing: "0.35em",
+              }}
+              className="bg-white  
+              hover:bg-white hover:bg-opacity-90"
             >
               <Box component={"span"} className="font-extrabold ">
                 contact
@@ -42,9 +70,12 @@ const MenuToggle = () => {
               variant="contained"
               component={Link}
               href={"#"}
-              className="tracking-[0.35em] md:scale-100 sm:scale-75"
+              sx={{
+                letterSpacing: "0.35em",
+                scale: { md: 1, sm: 0.75 },
+              }}
             >
-              <Box component={"span"} className="font-extrabold ">
+              <Box component={"span"} fontWeight={900}>
                 visit now
               </Box>
             </Button>

@@ -7,14 +7,26 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 const Menu = ({ menuItems, name }: MenuType) => {
   return (
-    <Box className="w-full lg:w-2/12">
+    <Box sx={{ width: { lg: 2 / 12, xs: "100%" } }}>
       <Typography
         variant="h2"
-        className="text-2xl font-bold mt-2 border-b-2 pb-5 "
+        fontSize={24}
+        fontWeight={700}
+        mt={1}
+        borderBottom={2}
+        pb={2.5}
       >
         {name}
       </Typography>
-      <List className="flex flex-col gap-2 pt-2 pl-1">
+      <List
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
+          pt: 1,
+          pl: 0.5,
+        }}
+      >
         {menuItems.map((menuItem, index) => (
           <Link
             href={menuItem.href}

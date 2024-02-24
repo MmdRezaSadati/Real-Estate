@@ -7,9 +7,12 @@ const Navbar = () => {
   return (
     <Box
       component={"nav"}
-      className="flex gap-7 whitespace-nowrap items-center "
+      display={"flex"}
+      gap={3.5}
+      whiteSpace={"nowrap"}
+      alignItems={"center"}
     >
-      <Box className="lg:flex hidden gap-7">
+      <Box sx={{ display: { lg: "flex", xs: "none" } }} gap={3.5}>
         {NAVBAR_ITEMS.map((item) => (
           <Link
             href={item.href}
@@ -19,11 +22,21 @@ const Navbar = () => {
           </Link>
         ))}
       </Box>
-      <Box className="sm:flex hidden lg:mx-5 gap-6">
+      <Box
+        sx={{ display: { sm: "flex", xs: "none" }, mx: { lg: "20px" } }}
+        gap={3}
+      >
         <Button
           component={Link}
           href={"#"}
-          className="bg-white md:scale-100 scale-75 md:!mx-0 -mr-10 ml-10 hover:bg-white hover:bg-opacity-90 tracking-[0.35em]"
+          sx={{
+            scale: { md: 1, sm: 0.75 },
+            mx: { md: 0 },
+            mr: "-40px",
+            ml: "40px",
+            letterSpacing: "0.35em",
+          }}
+          className="bg-white hover:bg-white hover:bg-opacity-90"
         >
           <Box component={"span"} className="font-extrabold ">
             contact
@@ -34,14 +47,17 @@ const Navbar = () => {
           variant="contained"
           component={Link}
           href={"#"}
-          className="tracking-[0.35em] md:scale-100 scale-75"
+          sx={{
+            letterSpacing: "0.35em",
+            scale: { md: 1, sm: 0.75 },
+          }}
         >
-          <Box component={"span"} className="font-extrabold ">
+          <Box component={"span"} fontWeight={900}>
             visit now
           </Box>
         </Button>
       </Box>
-      <Box className="lg:hidden flex">
+      <Box sx={{display:{lg:'none',xs:"flex"}}} className="lg:hidden flex">
         <MenuToggle />
       </Box>
     </Box>
