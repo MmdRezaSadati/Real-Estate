@@ -49,10 +49,11 @@ const CategoriesSection = () => {
             />
           </Box>
         </Box>
-        <Box className="w-full  sm:text-left text-center md:w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5 sm:px-10">
+        <Box className="w-full  sm:text-left text-center md:w-2/3 pt-14 lg:px-0 px-10 flex flex-col justify-center items-center gap-10">
           <XTitle
             weight="font-extrabold"
-            size="lg:text-5xl md:text-3xl text-3xl"
+            className="px-5"
+            size="lg:text-6xl md:text-5xl text-3xl"
             color="text-slate-900"
             important={"Next Door"}
           >
@@ -60,7 +61,7 @@ const CategoriesSection = () => {
           </XTitle>
           <Typography
             variant="body2"
-            className="lg:text-base sm:text-sm text-base font-semibold text-gray-500"
+            className="lg:text-base sm:text-sm px-6 text-base font-semibold text-gray-500"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             odit rerum at vel veritatis libero consectetur soluta explicabo

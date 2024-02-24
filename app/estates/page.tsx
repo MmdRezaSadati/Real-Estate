@@ -36,7 +36,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
           className="absolute w-[550px] h-[550px] z-0 -top-20 text-slate-400 -left-5 opacity-10 "
           color="disabled"
         />
-        <MainContainer className="flex gap-5 justify-center flex-wrap">
+        <MainContainer className="flex gap-5 justify-center lg:flex-nowrap flex-wrap">
           {estateMapper(ESTATES_FILTERED)}
         </MainContainer>
       </Box>

@@ -16,14 +16,13 @@ const Menu = ({ menuItems, name }: MenuType) => {
       </Typography>
       <List className="flex flex-col gap-2 pt-2 pl-1">
         {menuItems.map((menuItem, index) => (
-          <ListItem
-            components={Link}
+          <Link
             href={menuItem.href}
             key={index}
             className="text-slate-400 cursor-pointer hover:text-slate-200"
           >
             <ListItemText>{menuItem.name}</ListItemText>
-          </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
