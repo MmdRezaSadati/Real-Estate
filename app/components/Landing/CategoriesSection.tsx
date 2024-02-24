@@ -1,5 +1,5 @@
 import { MainContainer } from "../partials";
-import { BigImage, SuperSale, XTitle } from "../common";
+import { AutoTypeWriter, BigImage, SuperSale, XTitle } from "../common";
 import ImageSrc from "@/public/images/House2.jpg";
 import ImageSrc2 from "@/public/images/House3.jpg";
 import ImageSrc3 from "@/public/images/House1.png";
@@ -61,12 +61,18 @@ const CategoriesSection = () => {
           </XTitle>
           <Typography
             variant="body2"
-            className="lg:text-base sm:text-sm px-6 text-base font-semibold text-gray-500"
+            className="lg:text-base sm:text-sm px-6 min-h-20 text-base font-semibold text-gray-500"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            odit rerum at vel veritatis libero consectetur soluta explicabo
-            optio repellendus aspernatur, quidem ut quo illum alias impedit
-            iste. Ullam, provident.
+            <AutoTypeWriter
+              Text={[
+                `Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                odit rerum at vel veritatis libero consectetur soluta explicabo
+                optio repellendus aspernatur, quidem ut quo illum alias impedit
+                iste. Ullam, provident.`,
+              ]}
+              typeSpeed={60}
+              loop={1}
+            />
           </Typography>
           <Box className="flex relative text-left px-3 w-full gap-3">
             <CategorySlider className="" CATEGORIES={CATEGORIES} />

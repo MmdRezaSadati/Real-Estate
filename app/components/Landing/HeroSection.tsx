@@ -2,7 +2,14 @@ import { MainContainer } from "../partials";
 import Image from "next/image";
 import Home1 from "@/public/icons/Home1.png";
 // import Home2 from "@/public/icons/home2.svg";
-import { BigImage, BlurMenu, SearchBox, SuperSale, XTitle } from "../common";
+import {
+  AutoTypeWriter,
+  BigImage,
+  BlurMenu,
+  SearchBox,
+  SuperSale,
+  XTitle,
+} from "../common";
 import BigImageSrc from "@/public/images/House1.png";
 import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
@@ -65,8 +72,13 @@ const HeroSection = () => {
             Search And Tour With{" "}
           </XTitle>
           <Typography className="text-sm text-gray-500">
-            Get An In-Depth Look At What Your Monthly And Closing Costs Will
-            Look Like Based On Your Financial Situation And Goals.{" "}
+            <AutoTypeWriter
+              Text={[
+                "Get An In-Depth Look At What Your Monthly And Closing Costs Will Look Like Based On Your Financial Situation And Goals.",
+              ]}
+              typeSpeed={60}
+              loop={1}
+            />
           </Typography>
           <Box className="flex gap-10 justify-around md:pr-20 w-full">
             {dataMapper}

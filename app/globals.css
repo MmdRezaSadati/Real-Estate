@@ -4,7 +4,7 @@
 
 @layer base {
   .mySwiper2 {
-    @apply sm:!h-[550px] !h-96;
+    @apply sm:!h-[500px] !h-96;
   }
   .mySwiper .swiper-slide {
     @apply sm:h-40 h-28;
