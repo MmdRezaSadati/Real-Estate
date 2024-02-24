@@ -31,12 +31,34 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
       <MainContainer>
         <FilterBox />
       </MainContainer>
-      <Box className="bg-corbeau-500 overflow-hidden relative bg-opacity-10  px-5 py-9">
+      <Box
+        overflow={"hidden"}
+        position={"relative"}
+        px={2.5}
+        py={5}
+        className="bg-corbeau-500 bg-opacity-10"
+      >
         <HomeWorkOutlinedIcon
-          className="absolute w-[550px] h-[550px] z-0 -top-20 text-slate-400 -left-5 opacity-10 "
+          sx={{
+            position: "absolute",
+            width: 550,
+            height: 550,
+            zIndex: 0,
+            top: -80,
+            left: -20,
+            opacity: 0.1,
+          }}
+          className="text-slate-400 "
           color="disabled"
         />
-        <MainContainer className="flex gap-5 justify-center lg:flex-nowrap flex-wrap">
+        <MainContainer
+          sx={{
+            display: "flex",
+            gap: 2.5,
+            justifyContent: "center",
+            flexWrap: { lg: "nowrap", xs: "wrap" },
+          }}
+        >
           {estateMapper(ESTATES_FILTERED)}
         </MainContainer>
       </Box>

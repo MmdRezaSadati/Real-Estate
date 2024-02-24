@@ -22,9 +22,19 @@ const Product = ({
 }: ProductType) => {
   return (
     <Card
-      className={`sm:w-[350px] text-left !overflow-visible max-w-[400px] w-full relative scale-x-90 min-h-96 group shadow-2xl shadow-slate-300 hover:shadow-slate-400 hover:-translate-y-2 transition-all text-slate-100 bg-white rounded-3xl p-3 group ${
-        isPrompt && "border-2 border-sky-950"
-      }`}
+      sx={{
+        width: { sm: 350, xs: "100%" },
+        textAlign: "left",
+        maxWidth: 400,
+        position: "relative",
+        minHeight: 384,
+        p: 1.5,
+        borderRadius: 24,
+      }}
+      className={`scale-x-90 group shadow-2xl shadow-slate-300 hover:shadow-slate-400
+       hover:-translate-y-2 transition-all text-slate-100 bg-white ${
+         isPrompt && "border-2 border-sky-950"
+       }`}
     >
       {isPrompt && <Prompt />}
       <ViewsCount
