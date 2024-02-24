@@ -22,7 +22,7 @@ const Product = ({
 }: ProductType) => {
   return (
     <Card
-      className={`sm:w-96 !overflow-visible w-full relative scale-x-90 h-96 group shadow-2xl shadow-slate-300 hover:shadow-slate-400 hover:-translate-y-2 transition-all text-slate-100 bg-white rounded-3xl p-3 group ${
+      className={`sm:w-96 text-left !overflow-visible max-w-[400px] w-full relative scale-x-90 min-h-96 group shadow-2xl shadow-slate-300 hover:shadow-slate-400 hover:-translate-y-2 transition-all text-slate-100 bg-white rounded-3xl p-3 group ${
         isPrompt && "border-2 border-sky-950"
       }`}
     >
@@ -58,8 +58,7 @@ const Product = ({
         </Box>
         <Typography
           variant="body2"
-          whiteSpace={"nowrap"}
-          className="text-xl font-semibold mt-1"
+          className="text-xl sm:whitespace-nowrap font-semibold mt-1"
         >
           <Box component={"span"} className="text-blue-700">
             {price > 0 ? "$" + SeparationNumberString(price) : "an argument"}

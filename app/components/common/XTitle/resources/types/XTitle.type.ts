@@ -6,5 +6,6 @@ interface XTitleType {
   weight: string;
   important: string;
   color?:string;
+  className?:string;
 }
 export default XTitleType;

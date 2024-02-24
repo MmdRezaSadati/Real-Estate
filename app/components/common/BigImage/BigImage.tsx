@@ -15,7 +15,9 @@ const BigImage = ({
       alt={alt}
       className={`${className ? className : ""} ${width ? width : ""} ${
         height ? height : ""
-      } ${shadow ? shadow : ""}  object-cover rounded-b-[800px] rounded-t-full`}
+      } ${
+        shadow ? shadow : ""
+      }  object-cover rounded-b-[800px] relative z-0 rounded-t-full`}
     />
   );
 };

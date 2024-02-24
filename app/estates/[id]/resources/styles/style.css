@@ -27,7 +27,7 @@ body {
 }
 
 .swiper {
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -38,19 +38,17 @@ body {
 }
 
 .mySwiper2 {
-  height: 350px;
-  width: 80%;
+  width: 100%;
 }
 
 .mySwiper {
-  height: 20%;
+  height: 12%;
   box-sizing: border-box;
   padding: 10px 0;
 }
 
 .mySwiper .swiper-slide {
   width: 25%;
-  height: 150px;
   opacity: 0.4;
 }
 

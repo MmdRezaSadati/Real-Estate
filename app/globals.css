@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .mySwiper2 {
+    @apply sm:!h-[550px] h-96;
+  }
+  .mySwiper .swiper-slide {
+    @apply sm:h-40 h-28;
+  }
+  .mySwiperSlider .swiper-wrapper {
+    @apply lg:gap-0 md:gap-2 sm:gap-8;
+  }
+}
 @layer utilities {
   img {
     @apply select-none;

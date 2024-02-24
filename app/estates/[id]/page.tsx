@@ -18,9 +18,7 @@ const EstatesDetails = ({ params: { id } }: { params: { id: string } }) => {
       {/* EstatesDetails {estate?.estateName} */}
       <Box className={user ? "lg:w-3/5 w-full" : "w-full"}>
         <TitleSection estate={estate} />
-        <BoxComponent>
-          <GallerySlider images={estate?.imageSrc} title={estate?.estateName} />
-        </BoxComponent>
+        <GallerySlider images={estate?.imageSrc} title={estate?.estateName} />
         <BoxComponent>
           <PropertyDetails estate={estate} />
         </BoxComponent>

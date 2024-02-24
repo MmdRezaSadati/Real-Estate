@@ -44,27 +44,32 @@ const DetailSection = () => {
   ];
   return (
     <Box className="w-full py-16 mt-20 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
-      <MainContainer className="flex">
+      <MainContainer className="lg:flex block">
         <HomeWorkOutlinedIcon
           className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
           color="disabled"
         />
-        <Box className="w-3/5 relative px-16 z-10">
-          <Box className="rounded-3xl big-image-shadow3 my-3 gap-5 gap-y-6 bg-slate-50 justify-around w-full flex flex-wrap p-5">
+        <Box className="w-full lg:w-3/5 relative px-16 z-10">
+          <Box className="rounded-3xl big-image-shadow3 my-3 gap-5 gap-y-6 lg:min-w-[500px] bg-slate-50 justify-around w-full flex flex-wrap p-5">
             {DETAILS.map((item, index) => (
               <Box
                 key={item.title + " detailCard " + index}
-                className="w-1/4 bg-slate-50 py-3 shadow-2xl shadow-slate-300 hover:shadow-blue-600 rounded-3xl text-slate-800 group flex flex-col items-center hover:text-slate-100 transition-all cursor-pointer hover:bg-blue-600"
+                className="md:w-1/4 md:scale-x-110 p-2 sm:w-5/12 w-full bg-slate-50 sm:py-3 shadow-2xl shadow-slate-300 hover:shadow-blue-600 rounded-3xl text-slate-800 group flex flex-row sm:flex-col items-center hover:text-slate-100 transition-all cursor-pointer hover:bg-blue-600"
               >
-                <item.icon className="w-16 h-20 group-hover:fill-white fill-blue-600 " />
-                <Typography variant="h3" className="text-xl text-center px-8 py-2">{item.title}</Typography>
+                <item.icon className="md:w-16 md:h-20 w-10 h-14 group-hover:fill-white fill-blue-600 " />
+                <Typography
+                  variant="h3"
+                  className="md:text-lg xl:text-xl text-base text-center px-1 sm:px-8 py-2"
+                >
+                  {item.title}
+                </Typography>
               </Box>
             ))}
           </Box>
-          <SearchBox />
+          <SearchBox className="sm:block hidden" />
         </Box>
-        <Box className="w-2/5 relative z-10 min-w-[400px] pt-5">
-          <Box className="relative min-w-[300px] z-10">
+        <Box className="w-full lg:w-2/5 relative z-10 sm:min-w-[350px] pt-5">
+          <Box className="relative lg:block flex justify-center min-w-[300px] z-10">
             <BigImage
               shadow="big-image-shadow3"
               src={ImageSrc}

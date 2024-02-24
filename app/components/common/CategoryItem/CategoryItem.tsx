@@ -8,9 +8,9 @@ import Link from "next/link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const CategoryItem = ({ ImageSrc, title, href }: CategoryItemType) => {
+const CategoryItem = ({ imageSrc, title, href }: CategoryItemType) => {
   return (
-    <Box className="relative group w-full">
+    <Box className="relative group">
       <SuperSale
         rounded="rounded-lg"
         padding="px-2 pt-1 pb-2"
@@ -18,15 +18,20 @@ const CategoryItem = ({ ImageSrc, title, href }: CategoryItemType) => {
       >
         <Image src={Home1} className="w-8" alt="product icon" />
       </SuperSale>
-      <Box className="flex relative overflow-hidden items-center flex-col gap-2 bg-gray-900 p-4 w-52 rounded-t-[250px] rounded-b-xl">
-        <Box className="w-20 absolute top-3 left-1 blur-3xl bg-blue-100 bg-opacity-30 z-0 h-5/6"></Box>
+      <Box className="flex relative overflow-hidden items-center flex-col gap-2 bg-gray-900 p-4 xl:w-48 lg:w-64 rounded-t-[250px] rounded-b-xl">
+        <Box
+          component={"span"}
+          className="w-20 absolute top-3 left-1 blur-3xl bg-blue-100 bg-opacity-30 z-0 h-5/6"
+        ></Box>
         <Image
-          src={ImageSrc}
+          src={imageSrc!}
           alt={"product"}
           className="w-full relative z-10 h-32 rounded-t-[250px] rounded-b-xl"
         />
         <Link href={href}>
-          <Typography variant="h3" className="text-lg relative z-10">{title}</Typography>
+          <Typography variant="h3" className="text-lg relative z-10">
+            {title}
+          </Typography>
         </Link>
 
         <Box className="p-2 bg-slate-300 w-full rounded-xl">
@@ -36,7 +41,10 @@ const CategoryItem = ({ ImageSrc, title, href }: CategoryItemType) => {
             href={href}
             className="bg-blue-700 relative z-10 rounded-xl w-full h-full hover:bg-blue-800 text-white"
           >
-            <Box component={'span'} className="font-semibold items-center text-xs flex tracking-[0.25em]">
+            <Box
+              component={"span"}
+              className="font-semibold items-center text-xs flex tracking-[0.25em]"
+            >
               SEARCH NOW
               <ArrowRightAltIcon />
             </Box>

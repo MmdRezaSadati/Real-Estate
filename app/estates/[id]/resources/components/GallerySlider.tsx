@@ -14,6 +14,7 @@ import "../styles/style.css";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
+import BoxComponent from "./Box";
 
 const GallerySlider = ({
   images,

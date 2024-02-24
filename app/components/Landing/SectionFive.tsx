@@ -1,9 +1,10 @@
 import CountertopsTwoToneIcon from "@mui/icons-material/CountertopsTwoTone";
 import { MainContainer } from "../partials";
-import { Product, XTitle } from "../common";
+import { XTitle } from "../common";
 import { ESTATES } from "@/app/core/constants";
 import Box from "@mui/material/Box";
 import { estateMapper } from "@/app/core/utils";
+import { EstatesSlider } from "./resources";
 const SectionFive = () => {
   return (
     <Box className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
@@ -25,7 +26,7 @@ const SectionFive = () => {
             Select Your Goal And Well Guide You On Your Journey
           </Box>
           <Box className="flex w-full mt-20 justify-center gap-5">
-            {estateMapper(ESTATES)}
+            {<EstatesSlider ESTATES={ESTATES}/>}
           </Box>
         </Box>
       </MainContainer>

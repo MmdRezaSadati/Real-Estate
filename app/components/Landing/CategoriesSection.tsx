@@ -6,6 +6,8 @@ import ImageSrc3 from "@/public/images/House1.png";
 import CategoryItem from "../common/CategoryItem/CategoryItem";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { CategorySlider } from "./resources";
+import { SwiperSlide } from "swiper/react";
 const CategoriesSection = () => {
   const CATEGORIES = [
     {
@@ -24,19 +26,12 @@ const CategoriesSection = () => {
       href: "#",
     },
   ];
-  const dataMapper = CATEGORIES.map((item, index) => (
-    <CategoryItem
-      ImageSrc={item.imageSrc}
-      href={item.href}
-      key={item.title + " CategoryItem " + index}
-      title={item.title}
-    />
-  ));
+
   return (
     <Box className="w-full">
-      <MainContainer className="flex pt-14 px-28 justify-center gap-10">
-        <Box className="w-1/3 min-w-[400px] pt-5">
-          <Box className="relative group min-w-[300px] z-10 -mb-16">
+      <MainContainer className="flex md:flex-row flex-col-reverse pt-14 px-28 justify-center gap-14">
+        <Box className="w-full md:w-1/3 min-w-[400px] pt-5">
+          <Box className="relative md:flex hidden group justify-center min-w-[300px] z-10 -mb-16">
             <SuperSale
               rounded="rounded-t-full"
               padding="px-5 py-6"
@@ -48,27 +43,33 @@ const CategoriesSection = () => {
               shadow="big-image-shadow2"
               src={ImageSrc}
               alt={"home 2"}
+              className="my-2"
               width={"w-[550px]"}
               height={"h-[580px]"}
             />
           </Box>
         </Box>
-        <Box className="w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5">
+        <Box className="w-full  sm:text-left text-center md:w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5 sm:px-10">
           <XTitle
             weight="font-extrabold"
-            size="text-5xl"
+            size="lg:text-5xl md:text-3xl text-3xl"
             color="text-slate-900"
             important={"Next Door"}
           >
             Sell For More Than The Home{" "}
           </XTitle>
-          <Typography variant="body2" className="text-base font-semibold text-gray-500">
+          <Typography
+            variant="body2"
+            className="lg:text-base sm:text-sm text-base font-semibold text-gray-500"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             odit rerum at vel veritatis libero consectetur soluta explicabo
             optio repellendus aspernatur, quidem ut quo illum alias impedit
             iste. Ullam, provident.
           </Typography>
-          <Box className="flex gap-3">{dataMapper}</Box>
+          <Box className="flex relative text-left px-3 w-full gap-3">
+            <CategorySlider CATEGORIES={CATEGORIES} />
+          </Box>
         </Box>
       </MainContainer>
     </Box>
