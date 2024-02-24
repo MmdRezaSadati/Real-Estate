@@ -3,6 +3,7 @@ import { MainContainer } from "../partials";
 import { Product, XTitle } from "../common";
 import { ESTATES } from "@/app/core/constants";
 import Box from "@mui/material/Box";
+import { estateMapper } from "@/app/core/utils";
 const SectionFive = () => {
   return (
     <Box className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
@@ -24,23 +25,7 @@ const SectionFive = () => {
             Select Your Goal And Well Guide You On Your Journey
           </Box>
           <Box className="flex w-full mt-20 justify-center gap-5">
-            {ESTATES.map((item, index) => (
-              <Product
-                key={index}
-                price={item.price}
-                rooms={item.rooms}
-                status={item.status}
-                isPrompt={item.isPrompt}
-                landSize={item.landSize}
-                city={item.city}
-                imageSrc={item.imageSrc}
-                estateName={item.estateName}
-                view={item.view}
-                id={item.id}
-                rate={item.rate}
-                houseStyle={item.houseStyle}
-              />
-            ))}
+            {estateMapper(ESTATES)}
           </Box>
         </Box>
       </MainContainer>

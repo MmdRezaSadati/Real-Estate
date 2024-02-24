@@ -3,10 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { ArticleType } from "./resources";
 import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 const Article = ({ post }: ArticleType) => {
   return (
-    <Box
+    <Card
       key={post.title}
       className="flex flex-col overflow-hidden w-96 rounded-lg hover:shadow-xl shadow-lg"
     >
@@ -19,7 +21,7 @@ const Article = ({ post }: ArticleType) => {
           alt=""
         />
       </Box>
-      <Box className="flex flex-1 flex-col justify-between bg-white p-6">
+      <CardContent className="flex flex-1 flex-col justify-between bg-white p-6">
         <Box className="flex-1">
           <Typography
             variant="body2"
@@ -96,8 +98,8 @@ const Article = ({ post }: ArticleType) => {
             </Box>
           </Box>
         </Box>
-      </Box>
-    </Box>
+      </CardContent>
+    </Card>
   );
 };
 

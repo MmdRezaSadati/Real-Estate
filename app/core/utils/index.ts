@@ -1,2 +1,5 @@
-import SeparationNumber from "./SeparationNumber";
-export { SeparationNumber };
+import SeparationNumberString from "./SeparationNumberString";
+import SeparationPrice from "./SeparationPrice";
+import estateMapper from "./estatesMapper";
+
+export { SeparationNumberString, SeparationPrice, estateMapper };

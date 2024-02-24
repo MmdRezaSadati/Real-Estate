@@ -1,4 +1,4 @@
-import { SeparationNumber } from "@/app/core/utils";
+import { SeparationNumberString } from "@/app/core/utils";
 import { ProductType, Prompt, ViewsCount } from "./resources";
 import Link from "next/link";
 import StarIcon from "@mui/icons-material/Star";
@@ -56,16 +56,20 @@ const Product = ({
             {estateName}
           </Link>
         </Box>
-        <Typography variant="body2" className="text-xl font-semibold mt-1">
+        <Typography
+          variant="body2"
+          whiteSpace={"nowrap"}
+          className="text-xl font-semibold mt-1"
+        >
           <Box component={"span"} className="text-blue-700">
-            {price > 0 ? "$" + SeparationNumber(price) : "an argument"}
+            {price > 0 ? "$" + SeparationNumberString(price) : "an argument"}
           </Box>
           {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}
-          <Box component={"span"} className="text-base">
-            {"  "}| {landSize} SQFT {"  "}
-            <Typography variant="body2" className="inline-block font-bold">
+          <Box display={""} component={"span"} className="text-base">
+            {"  "}| {SeparationNumberString(landSize)} SQFT {"  "}
+            <Typography variant="caption" className="inline-block font-bold">
               | in {city}
             </Typography>
           </Box>

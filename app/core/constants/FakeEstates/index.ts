@@ -1,32 +1,33 @@
 import House1 from "@/public/images/House1.png";
 import House2 from "@/public/images/House2.jpg";
 import House3 from "@/public/images/House3.jpg";
+
 const ESTATES = [
   {
     id: "1",
     imageSrc: [House1, House1, House3],
     estateName: "new York apartment",
-    view: 150,
+    view: 1500,
     price: 150000,
-    rooms: 2,
     status: "Rent",
     landSize: 80,
+    rooms: 2,
+    bathrooms: 3,
+    guests: 5,
+    age: 2,
     isPrompt: false,
     hasParking: false,
     hasWareHouse: true,
     hasElevator: false,
-    longitude: 60,
-    latitude: 60,
     userId: "1",
-    age: 2,
     city: "New York",
     caption: "its awesome!",
     houseStyle: "apartment",
     houseId: "1",
     rate: "4.50",
-    bathrooms: 3,
-    guests: 5,
     insertDate: "2023-2-30",
+    longitude: 60,
+    latitude: 60,
   },
   {
     id: "2",

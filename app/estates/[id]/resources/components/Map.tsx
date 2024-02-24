@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-
 import Map, { NavigationControl } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import Pin from "./pin";
 import { Marker } from "react-map-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 const MapComponent = ({ estate }: any) => {
   return (
     <Map

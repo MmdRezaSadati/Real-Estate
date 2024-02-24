@@ -5,6 +5,8 @@ import image1 from "@/public/images/blogs/GettyImages-1602560231.webp";
 import image2 from "@/public/images/blogs/GettyImages-1481295318.webp";
 import image3 from "@/public/images/blogs/Willoughby-granny-flat.webp";
 import { Button } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 const POSTS = [
   {
     title: "Planning rules blamed for boosting property prices as much as 40%",
@@ -73,12 +75,13 @@ const Blogs = () => {
         <Box className="md:w-1/5 w-1/2 rounded-xl px-10"></Box>
         <Box className="md:w-1/5 w-1/2 rounded-xl"></Box>
         <Box className="md:w-1/5 w-full">
-          <Button
+          <Typography
+            variant="button"
             type="submit"
-            className="bg-blue-700 h-full rounded px-5 text-center w-full hover:bg-blue-800 text-white"
+            className="bg-blue-700 cursor-pointer flex justify-center items-center h-full rounded px-5 w-full hover:bg-blue-800 text-white"
           >
             Search
-          </Button>
+          </Typography>
         </Box>
       </Box>
       <Box className="flex justify-between py-5">

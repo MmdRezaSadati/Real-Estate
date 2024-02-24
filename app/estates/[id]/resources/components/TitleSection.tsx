@@ -1,5 +1,3 @@
-import React, { Fragment } from "react";
-
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import { CopyHere } from "@/app/components/common";
@@ -8,8 +6,10 @@ import moment from "moment";
 import { BoxComponent } from "..";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-const TitleSection = ({ estate }: { estate: any }) => {
+import { ProductType } from "@/app/core/types";
+const TitleSection = ({ estate }: { estate: ProductType | undefined }) => {
   let currentDate = moment(estate?.insertDate).format("Do MMMM");
+  console.log('complete');
   return (
     <BoxComponent>
       <Box className="flex justify-between text-slate-600 items-center">

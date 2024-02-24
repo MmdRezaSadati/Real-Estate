@@ -4,13 +4,9 @@ import { MainContainer } from "../components/partials";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {
-  filterEstates,
-  FilterBox,
-  SearchParamsType,
-  estateMapper,
-} from "./resources";
+import { filterEstates, FilterBox, SearchParamsType } from "./resources";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
+import { estateMapper } from "../core/utils";
 
 const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
   const houseStyle = searchParams.houseStyle ? searchParams.houseStyle : "";

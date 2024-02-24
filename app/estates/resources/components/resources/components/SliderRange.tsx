@@ -1,11 +1,11 @@
 "use client";
-import { SeparationNumber } from "@/app/core/utils";
+import { SeparationNumberString } from "@/app/core/utils";
 import { Slider } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, useState } from "react";
 import Typography from "@mui/material/Typography";
 function valuetext(value: number) {
-  return `${SeparationNumber(value)} $`;
+  return `${SeparationNumberString(value)} $`;
 }
 const minDistance = 50000;
 

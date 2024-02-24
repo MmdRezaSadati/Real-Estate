@@ -8,6 +8,8 @@ interface UserType {
   userImage: StaticImageData;
   isVerified: boolean;
   userAbout: string;
+  phoneNumber: string;
+  emailAddress: string;
   linksConnection: { link: string; type: string }[];
 }
 export default UserType;

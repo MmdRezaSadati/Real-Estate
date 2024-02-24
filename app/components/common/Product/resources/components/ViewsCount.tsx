@@ -2,7 +2,7 @@ import { Like, OfficialType } from "..";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { SeparationNumber } from "@/app/core/utils";
+import { SeparationNumberString } from "@/app/core/utils";
 import GroupIcon from "@mui/icons-material/Group";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import Box from "@mui/material/Box";
@@ -26,7 +26,7 @@ const ViewsCount = ({ estateName, imageSrc, id, view }: OfficialType) => {
       </Box>
       <Box className="w-full flex h-10 rounded-t-3xl items-center justify-between py-1 px-5 absolute blur-section transition-all -bottom-10 group-hover:-bottom-0 left-0 z-10">
         <Box component={"span"} className="text-slate-900 text-base font-bold">
-          <GroupIcon /> {SeparationNumber(view)} People Visited
+          <GroupIcon /> {SeparationNumberString(view)} People Visited
         </Box>
         <Button
           LinkComponent={Link}

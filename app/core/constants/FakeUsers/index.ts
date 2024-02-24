@@ -9,6 +9,8 @@ const FAKE_USERS = [
     userRate: 4.2,
     userImage: people01,
     isVerified: false,
+    phoneNumber: "09111111111",
+    emailAddress: "johnSmithJoon@gmail.com",
     userAbout: "hi i am john",
     linksConnection: [
       { link: "https://youtube.com/johnsmith", type: "youtube" },
@@ -25,6 +27,8 @@ const FAKE_USERS = [
     userRate: 2,
     userImage: people03,
     isVerified: true,
+    phoneNumber: "09111111111",
+    emailAddress: "sadwwca@gmail.com",
     userAbout: "hi i am Melissa",
     linksConnection: [
       { link: "https://youtube.com/Melissa", type: "youtube" },

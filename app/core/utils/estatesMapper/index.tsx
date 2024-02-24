@@ -1,7 +1,7 @@
 import { Product } from "@/app/components/common";
-import { ProductType } from "@/app/components/common/Product/resources";
-const mapper = (ESTATES_FILTERED: ProductType[]) =>
-  ESTATES_FILTERED.map((item: ProductType, index: number) => (
+import { ProductType } from "../../types";
+const mapper = (ESTATES: ProductType[]) =>
+  ESTATES.map((item: ProductType, index: number) => (
     <Product
       key={index}
       isPrompt={item.isPrompt}

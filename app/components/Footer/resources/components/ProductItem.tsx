@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProductItemType } from "..";
-import { SeparationNumber } from "@/app/core/utils";
+import { SeparationNumberString } from "@/app/core/utils";
 import Link from "next/link";
 
 import Box from "@mui/material/Box";
@@ -25,7 +25,7 @@ const ProductItem = ({
           {estateName}
         </Link>
         <Typography variant="body2" className="font-semibold px-2">
-          {price !== 0 ? "$ " + SeparationNumber(price) : "an argument "}
+          {price !== 0 ? "$ " + SeparationNumberString(price) : "an argument "}
           {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}

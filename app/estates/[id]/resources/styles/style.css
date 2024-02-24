@@ -32,14 +32,14 @@ body {
   margin-right: auto;
 }
 
-.swiper-slide{
+.swiper-slide {
   background-size: cover;
   background-position: center;
 }
 
 .mySwiper2 {
   height: 350px;
-  width: 50%;
+  width: 80%;
 }
 
 .mySwiper {
