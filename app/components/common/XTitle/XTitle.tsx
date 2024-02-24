@@ -7,11 +7,13 @@ const XTitle = ({
   size,
   weight,
   color,
+  sx,
   className,
 }: XTitleType) => {
   return (
     <Typography
       variant="h2"
+      sx={sx}
       className={`${size ? size : ""} ${color ? color : ""} ${
         weight ? weight : ""
       } ${className ? className : ""}`}

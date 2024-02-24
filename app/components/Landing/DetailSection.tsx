@@ -43,23 +43,78 @@ const DetailSection = () => {
     },
   ];
   return (
-    <Box className="w-full py-16 mt-20 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
-      <MainContainer className="lg:flex block">
+    <Box
+      width={"100%"}
+      py={8}
+      mt={10}
+      overflow={"hidden"}
+      position={"relative"}
+      zIndex={10}
+      className="bg-blue-100 bg-opacity-50"
+    >
+      <MainContainer sx={{ display: { lg: "flex", xs: "block" } }}>
         <HomeWorkOutlinedIcon
-          className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
+          sx={{
+            position: "absolute",
+            width: "550px",
+            height: "550px",
+            zIndex: 0,
+            top: -80,
+            left: -2.5 * 8,
+            opacity: 0.1,
+          }}
           color="disabled"
         />
-        <Box className="w-full lg:w-3/5 relative px-16 z-10">
-          <Box className="rounded-3xl big-image-shadow3 my-3 gap-5 gap-y-6 lg:min-w-[500px] bg-slate-50 justify-around w-full flex flex-wrap p-5">
+        <Box
+          sx={{ width: { lg: 3 / 5, xs: "100%" } }}
+          position={"relative"}
+          px={8}
+          zIndex={10}
+        >
+          <Box
+            sx={{ minWidth: { lg: "500px" } }}
+            gap={2.5}
+            rowGap={3}
+            p={2.5}
+            display={"flex"}
+            flexWrap={"wrap"}
+            width={"100%"}
+            justifyContent={"space-around"}
+            my={1.5}
+            borderRadius={3}
+            className="rounded-3xl big-image-shadow3 bg-slate-50 "
+          >
             {DETAILS.map((item, index) => (
               <Box
                 key={item.title + " detailCard " + index}
-                className="md:w-1/4 md:scale-x-110 p-2 sm:w-5/12 w-full bg-slate-50 sm:py-3 shadow-2xl shadow-slate-300 hover:shadow-blue-600 rounded-3xl text-slate-800 group flex flex-row sm:flex-col items-center hover:text-slate-100 transition-all cursor-pointer hover:bg-blue-600"
+                sx={{
+                  width: { md: 1 / 4, sm: 5 / 12, xs: "100%" },
+                  cursor: "pointer",
+                  py: { sm: "12px" },
+                  flexDirection: { sm: "column", xs: "row" },
+                  transition: "all 150ms",
+                }}
+                alignItems={"center"}
+                p={2}
+                borderRadius={3}
+                display={"flex"}
+                className="md:scale-x-110 shadow-2xl shadow-slate-300 hover:shadow-blue-600 text-slate-800 group bg-slate-50 hover:text-slate-100 hover:bg-blue-600"
               >
-                <item.icon className="md:w-16 md:h-20 w-10 h-14 group-hover:fill-white fill-blue-600 " />
+                <item.icon
+                  sx={{
+                    width: { md: "64px", xs: "40px" },
+                    height: { md: "40px", xs: "56px" },
+                  }}
+                  className="group-hover:fill-white fill-blue-600 "
+                />
                 <Typography
                   variant="h3"
-                  className="md:text-lg xl:text-xl text-base text-center px-1 sm:px-8 py-2"
+                  sx={{
+                    fontSize: { md: "18px", lg: "20px", xs: "16px" },
+                    px: { sm: "32px", xs: "4px" },
+                  }}
+                  py={1}
+                  textAlign={"center"}
                 >
                   {item.title}
                 </Typography>
@@ -68,8 +123,19 @@ const DetailSection = () => {
           </Box>
           <SearchBox className="sm:block hidden" />
         </Box>
-        <Box className="w-full lg:w-2/5 relative z-10 sm:min-w-[350px] pt-5">
-          <Box className="relative lg:block flex justify-center min-w-[300px] z-10">
+        <Box
+          sx={{ width: { lg: 2 / 5, xs: "100%" }, minWidth: { sm: "350px" } }}
+          pt={2.5}
+          position={"relative"}
+          zIndex={10}
+        >
+          <Box
+            position={"relative"}
+            sx={{ display: { lg: "block", xs: "flex" } }}
+            zIndex={10}
+            minWidth={"300px"}
+            justifyContent={"center"}
+          >
             <BigImage
               shadow="big-image-shadow3"
               src={ImageSrc}

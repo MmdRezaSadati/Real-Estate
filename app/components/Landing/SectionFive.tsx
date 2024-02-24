@@ -7,26 +7,48 @@ import { estateMapper } from "@/app/core/utils";
 import { EstatesSlider } from "./resources";
 const SectionFive = () => {
   return (
-    <Box className="w-full pb-16 pt-24 mt-28 overflow-hidden relative z-10 bg-blue-100 bg-opacity-50">
+    <Box
+      width={"100%"}
+      pb={8}
+      pt={12}
+      mt={14}
+      overflow={"hidden"}
+      position={"relative"}
+      zIndex={10}
+      className="bg-blue-100 bg-opacity-50"
+    >
       <MainContainer>
         <CountertopsTwoToneIcon
-          className="absolute w-[550px] h-[550px] z-0 -top-20 -left-5 opacity-10 "
+          sx={{
+            position: "absolute",
+            width: 550,
+            height: 550,
+            zIndex: 0,
+            top: -10,
+            left: -2.5,
+            opacity: 0.1,
+          }}
           color="disabled"
         />
         <Box>
           <XTitle
-            size={"text-4xl"}
             color="text-slate-900"
-            weight={"font-extrabold"}
+            sx={{ fontSize: 36, fontWeight: 900 }}
             important={"Step"}
           >
             Take The First{" "}
           </XTitle>
-          <Box className="text-base my-3 font-semibold text-gray-400">
+          <Box fontSize={16} my={3} fontWeight={600} className="text-gray-400">
             Select Your Goal And Well Guide You On Your Journey
           </Box>
-          <Box className="flex w-full mt-20 justify-center gap-5">
-            {<EstatesSlider className={'mySwiperSlider'} ESTATES={ESTATES}/>}
+          <Box
+            display={"flex"}
+            width={"100%"}
+            mt={10}
+            justifyContent={"center"}
+            gap={2.5}
+          >
+            {<EstatesSlider className={"mySwiperSlider"} ESTATES={ESTATES} />}
           </Box>
         </Box>
       </MainContainer>

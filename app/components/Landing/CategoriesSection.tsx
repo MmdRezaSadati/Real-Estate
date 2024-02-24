@@ -28,10 +28,29 @@ const CategoriesSection = () => {
   ];
 
   return (
-    <Box className="w-full">
-      <MainContainer className="flex md:flex-row flex-col-reverse pt-14 px-28 justify-center gap-14">
-        <Box className="w-full md:w-1/3 min-w-[400px] pt-5">
-          <Box className="relative md:flex hidden group justify-center min-w-[300px] z-10 -mb-16">
+    <Box width={"100%"}>
+      <MainContainer
+        sx={{
+          display: "flex",
+          flexDirection: { md: "row", xs: "column-reverse" },
+          pt: 7,
+          px: 14,
+          justifyContent: "center",
+          gap: 7,
+        }}
+      >
+        <Box
+          sx={{ width: { md: 1 / 3, xs: "100%" } }}
+          minWidth={50}
+          pt={"20px"}
+        >
+          <Box
+            sx={{ display: { md: "flex", xs: "none" }, zIndex: 10 }}
+            minWidth={"300px"}
+            mb={-8}
+            position={"relative"}
+            className="group"
+          >
             <SuperSale
               rounded="rounded-t-full"
               padding="px-5 py-6"
@@ -49,11 +68,25 @@ const CategoriesSection = () => {
             />
           </Box>
         </Box>
-        <Box className="w-full  sm:text-left text-center md:w-2/3 pt-14 lg:px-0 px-10 flex flex-col justify-center items-center gap-10">
+        <Box
+          sx={{
+            width: { md: 2 / 3, xs: "100%" },
+            textAlign: { sm: "left", xs: "center" },
+            px: { lg: 0, xs: 5 },
+          }}
+          pt={7}
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          gap={5}
+        >
           <XTitle
-            weight="font-extrabold"
-            className="px-5"
-            size="lg:text-6xl md:text-5xl text-3xl"
+            sx={{
+              fontWeight: 900,
+              px: 2.5,
+              fontSize: { lg: 60, md: 48, xs: 30 },
+            }}
             color="text-slate-900"
             important={"Next Door"}
           >
@@ -61,7 +94,13 @@ const CategoriesSection = () => {
           </XTitle>
           <Typography
             variant="body2"
-            className="lg:text-base sm:text-sm px-6 min-h-20 text-base font-semibold text-gray-500"
+            sx={{
+              fontSize: { lg: 16, sm: "12px", xs: 16 },
+              fontWeight: "600",
+              px: 3,
+            }}
+            minHeight={10}
+            className="text-gray-500"
           >
             <AutoTypeWriter
               Text={[
@@ -74,7 +113,15 @@ const CategoriesSection = () => {
               loop={1}
             />
           </Typography>
-          <Box className="flex relative text-left px-3 w-full gap-3">
+          <Box
+            display={"flex"}
+            position={"relative"}
+            textAlign={"left"}
+            px={1.5}
+            width={"100%"}
+            gap={1.5}
+            className="flex relative text-left px-3 w-full gap-3"
+          >
             <CategorySlider className="" CATEGORIES={CATEGORIES} />
           </Box>
         </Box>

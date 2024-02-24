@@ -21,21 +21,41 @@ const SectionFour = () => {
   const itemMapper = ITEMS.map((item, index) => (
     <Box
       key={item.title + index}
-      className="w-full group text-left gap-4 flex items-center"
+      width={"100%"}
+      textAlign={"left"}
+      gap={2}
+      display={"flex"}
+      alignItems={"center"}
+      className="group"
     >
-      <Box className="w-24 h-20 rounded-full group-hover:shadow-xl group-hover:shadow-blue-400 group-hover:bg-blue-600 flex justify-center items-center">
-        <item.icon className="w-14 h-14 fill-blue-600 group-hover:fill-white" />
+      <Box
+        width={96}
+        height={80}
+        borderRadius={"9999px"}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        className="group-hover:shadow-xl group-hover:shadow-blue-400 group-hover:bg-blue-600"
+      >
+        <item.icon
+          sx={{ width: 56, height: 56 }}
+          className="fill-blue-600 group-hover:fill-white"
+        />
       </Box>
       <Box>
         <Typography
           variant="body2"
-          className="text-xl font-extrabold text-slate-900"
+          fontSize={20}
+          fontWeight={800}
+          className="text-slate-900"
         >
           {item.title}
         </Typography>
         <Typography
           variant="body2"
-          className="text-base font-semibold text-gray-500"
+          fontSize={16}
+          fontWeight={600}
+          className="text-gray-500"
         >
           {item.caption}
         </Typography>
@@ -44,9 +64,29 @@ const SectionFour = () => {
   ));
 
   return (
-    <Box className="w-full">
-      <MainContainer className="flex pt-14 px-28 justify-between items-center gap-5">
-        <Box className="w-full md:w-1/3 relative md:flex hidden group min-w-64 lg:min-w-[400px] z-10 -mb-16 pt-5">
+    <Box width={"100%"}>
+      <MainContainer
+        sx={{
+          display: "flex",
+          pt: 7,
+          px: 14,
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 2.5,
+        }}
+      >
+        <Box
+          sx={{
+            display: { md: "flex", xs: "none" },
+            width: { md: 1 / 3, xs: "100%" },
+            minWidth: { lg: "400px", xs: "256px" },
+          }}
+          position={"relative"}
+          zIndex={10}
+          mb={-8}
+          pt={2.5}
+          className="group"
+        >
           <SuperSale
             rounded="rounded-t-full"
             padding="px-5 py-6"
@@ -62,10 +102,21 @@ const SectionFour = () => {
             height={"lg:h-[550px] h-[450px]"}
           />
         </Box>
-        <Box className="w-full sm:text-left text-center md:w-2/3 pt-14 flex flex-col justify-center items-center gap-10 px-5">
+        <Box
+          sx={{
+            textAlign: { sm: "left", xs: "center" },
+            width: { md: 2 / 3, xs: "100%" },
+          }}
+          pt={7}
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          gap={5}
+          px={2.5}
+        >
           <XTitle
-            weight="font-extrabold"
-            size="lg:text-5xl text-4xl sm:text-3xl"
+            sx={{ fontSize: { lg: 48, sm: 30, xs: 36 }, fontWeight: 900 }}
             color="text-slate-900"
             important={"Next Door"}
           >
@@ -86,7 +137,9 @@ const SectionFour = () => {
               loop={1}
             />
           </Typography>
-          <Box className="flex gap-2 flex-col">{itemMapper}</Box>
+          <Box display={"flex"} gap={1} flexDirection={"column"}>
+            {itemMapper}
+          </Box>
         </Box>
       </MainContainer>
     </Box>

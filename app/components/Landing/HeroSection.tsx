@@ -54,24 +54,58 @@ const HeroSection = () => {
     <Box
       key={index}
       whiteSpace={"nowrap"}
-      className="flex flex-col justify-center gap-2 items-center"
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={"center"}
+      gap={2}
+      alignItems={"center"}
     >
       <Image src={option.src} width={80} alt="Home icon" />
       <Box component={"span"}>{option.text}</Box>
     </Box>
   ));
   return (
-    <Box className="flex w-full relative bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 sm:before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-40 before:h-64 ">
-      <MainContainer className="flex sm:flex-row flex-col pt-14 z-10 relative px-28 justify-center gap-10">
-        <Box className="w-full sm:w-1/2 flex flex-col items-start gap-10 px-5 sm:text-left text-center">
+    <Box
+      sx={{ display: "flex", width: "100%" }}
+      position={"relative"}
+      className="bg-corbeau-900 after:w-52 after:absolute after:top-52 after:left-1 after:blur-[120px] after:shadow-white after:shadow-2xl after:bg-blue-100 after:bg-opacity-30 after:z-0 after:h-52 sm:before:w-64 before:absolute before:top-0 before:right-1/3 before:blur-[90px] before:shadow-white before:shadow-2xl before:bg-blue-100 before:bg-opacity-30 before:z-40 before:h-64 "
+    >
+      <MainContainer
+        sx={{
+          display: "flex",
+          flexDirection: { sm: "row", xs: "column" },
+          px: "112px",
+          justifyContent: "center",
+          gap: "40px",
+          paddingTop: "56px",
+          zIndex: 10,
+          position: "relative",
+        }}
+      >
+        <Box
+          sx={{
+            width: { sm: 1 / 2, xs: "100%" },
+            textAlign: { sm: "left", xs: "center" },
+          }}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"flex-start"}
+          gap={5}
+          px={2.5}
+        >
           <XTitle
-            weight="font-extrabold"
-            size="lg:text-7xl text-4xl sm:text-5xl"
+            sx={{
+              fontSize: { lg: "72px", sm: "48px", xs: 36 },
+              fontWeight: "800",
+            }}
             important={"EstataBode"}
           >
             Search And Tour With{" "}
           </XTitle>
-          <Typography className="text-sm text-gray-500">
+          <Typography
+            sx={{ fontSize: "14px", minHeight: "56px" }}
+            className="text-gray-500"
+          >
             <AutoTypeWriter
               Text={[
                 "Get An In-Depth Look At What Your Monthly And Closing Costs Will Look Like Based On Your Financial Situation And Goals.",
@@ -80,13 +114,34 @@ const HeroSection = () => {
               loop={1}
             />
           </Typography>
-          <Box className="flex gap-10 justify-around md:pr-20 w-full">
+          <Box
+            display={"flex"}
+            gap={5}
+            justifyContent={"space-around"}
+            width={"100%"}
+            sx={{ pr: { md: 10 } }}
+          >
             {dataMapper}
           </Box>
           <SearchBox isHero />
         </Box>
-        <Box className="w-full sm:w-1/2 lg:min-w-[500px] min-w-[330px] pt-5">
-          <Box className="relative group flex justify-center lg:min-w-[500px] min-w-[330px] z-10 -mb-16">
+        <Box
+          sx={{
+            width: { sm: 1 / 2, xs: "100%" },
+            minWidth: { lg: "500px", xs: "330px" },
+            pt: "20px",
+          }}
+        >
+          <Box
+            position={"relative"}
+            display={"flex"}
+            justifyContent={"center"}
+            sx={{
+              minWidth: { lg: "500px", xs: "330px" },
+            }}
+            zIndex={10}
+            mb={-8}
+          >
             <SuperSale
               rounded="rounded-t-full"
               padding="px-5 py-6"
