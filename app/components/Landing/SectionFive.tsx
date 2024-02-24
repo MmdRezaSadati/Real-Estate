@@ -48,7 +48,7 @@ const SectionFive = () => {
             justifyContent={"center"}
             gap={2.5}
           >
-            {<EstatesSlider className={"mySwiperSlider"} ESTATES={ESTATES} />}
+            <EstatesSlider className={"mySwiperSlider"} ESTATES={ESTATES} />
           </Box>
         </Box>
       </MainContainer>
