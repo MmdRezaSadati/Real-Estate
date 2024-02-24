@@ -1,3 +1,4 @@
 import MainContainer from "./container";
-
-export { MainContainer };
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+export { MainContainer ,Header,Footer};
