@@ -35,6 +35,7 @@ const Footer = () => {
             <Image
               src={logoSrc}
               alt={"Logo"}
+              title="Logo"
               className="scale-90 max-w-72 mb-5 -mt-16"
             />
             <Typography

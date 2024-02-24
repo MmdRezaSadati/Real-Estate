@@ -10,10 +10,14 @@ const BlurMenu = ({ className, MENU_ARRAY }: BlurMenuType) => {
         menu.href ? (
           <Link
             key={key}
+            title={menu.name}
             href={menu.href}
-            className="bg-white rounded-xl w-full bg-opacity-60 flex p-2"
+            className="bg-white cursor-pointer rounded-xl  w-full bg-opacity-60 flex p-2"
           >
-            <Box className="bg-blue-700 relative z-10 flex justify-center items-center text-xl menu-icon-shadow w-14 h-12 rounded-xl">
+            <Box
+              title={menu.name}
+              className="bg-blue-700 relative z-10 flex justify-center items-center text-xl menu-icon-shadow w-14 h-12 rounded-xl"
+            >
               {<menu.icon fontSize="medium" />}
             </Box>
             <Box className="bg-white w-full rounded-md font-bold flex neumorphism justify-start items-center bg-opacity-70 text-slate-900 p-2">

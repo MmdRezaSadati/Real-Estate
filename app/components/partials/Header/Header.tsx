@@ -21,7 +21,12 @@ const Header = () => {
           alignItems={"center"}
         >
           <Link href={"/"}>
-            <Image src={logo} alt={""} className="min-w-48 w-48" />
+            <Image
+              src={logo}
+              alt={"Logo"}
+              title="Logo"
+              className="min-w-48 w-48"
+            />
           </Link>
           <Navbar />
         </Box>

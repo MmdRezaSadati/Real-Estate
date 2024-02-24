@@ -21,7 +21,11 @@ const ProductItem = ({
         className="w-20 h-16 rounded-t-[80px] rounded-b-2xl object-cover"
       />
       <Box display={"flex"} flexDirection={"column"} gap={0} px={1}>
-        <Link href={"/estates/" + id} className="font-semibold3 text-xl">
+        <Link
+          href={"/estates/" + id}
+          title={estateName}
+          className="font-semibold3 text-xl"
+        >
           {estateName}
         </Link>
         <Typography fontWeight={600} px={1} variant="body2">

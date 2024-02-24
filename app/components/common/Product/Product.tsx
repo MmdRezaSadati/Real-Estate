@@ -52,7 +52,11 @@ const Product = ({
           <Box component={"span"} className="flex items-center gap-1">
             <StarIcon className="text-yellow-500" /> {rate}
           </Box>
-          <Link href={"/estates/" + id} className="text-2xl font-bold">
+          <Link
+            href={"/estates/" + id}
+            title={estateName}
+            className="text-2xl font-bold"
+          >
             {estateName}
           </Link>
         </Box>
