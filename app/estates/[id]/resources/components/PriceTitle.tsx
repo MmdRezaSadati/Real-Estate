@@ -11,11 +11,24 @@ const PriceTitle = ({
   children: ReactNode;
 }) => {
   return (
-    <Box className="sm:block flex gap-2 mb-5 items-center justify-between">
+    <Box
+      sx={{
+        display: { sm: "block", xs: "flex" },
+      }}
+      gap={1}
+      mb={2.5}
+      alignItems={"center"}
+      justifyContent={"space-between"}
+    >
       <Typography variant="subtitle1" className="text-slate-800 ">
         {children}
       </Typography>
-      <Typography variant="h5" className="ml-3 text-slate-800 font-bold">
+      <Typography
+        variant="h5"
+        fontWeight={700}
+        ml={1.5}
+        className="text-slate-800"
+      >
         $ {SeparationPrice(price)}
       </Typography>
     </Box>

@@ -12,10 +12,10 @@ const DetailItem = ({
 }) => {
   return (
     <Box display="flex" whiteSpace={"nowrap"} gap={1}>
-      <Typography variant="caption" className="text-base">
+      <Typography variant="caption" fontSize={16}>
         {children} {typeof item == "string" && ":"}
       </Typography>
-      <Typography variant="caption" className="text-base font-bold">
+      <Typography variant="caption" fontSize={16} fontWeight={700}>
         {" "}
         {typeof item == "string" ? (
           item

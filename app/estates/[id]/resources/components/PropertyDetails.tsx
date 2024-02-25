@@ -33,9 +33,19 @@ const PropertyDetails = ({ estate }: { estate: ProductType | undefined }) => {
       </DetailItem>
     ));
   return (
-    <Box className="flex sm:flex-row gap-10 flex-col justify-between">
-      <Box className="sm:w-3/4 w-full">
-        <Typography variant="h4" className="text-slate-800 font-bold text-2xl">
+    <Box
+      display={"flex"}
+      sx={{ flexDirection: { sm: "row", xs: "column" } }}
+      gap={5}
+      justifyContent={"space-between"}
+    >
+      <Box sx={{ width: { sm: 3 / 4, xs: "100%" } }}>
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          fontSize={24}
+          className="text-slate-800"
+        >
           Property Details
         </Typography>
         <Box
@@ -52,14 +62,14 @@ const PropertyDetails = ({ estate }: { estate: ProductType | undefined }) => {
           </Box>
         </Box>
         <Box>
-          <Typography variant="h5" className="font-bold mb-2">
+          <Typography variant="h5" fontWeight={700} mb={1}>
             Caption{" "}
           </Typography>
           <Typography variant="body2">{estate?.caption}</Typography>
         </Box>
       </Box>
 
-      <Box className="sm:w-1/4 w-full" whiteSpace={"nowrap"}>
+      <Box sx={{ width: { sm: 1 / 4, xs: "100%" } }} whiteSpace={"nowrap"}>
         {estate?.price !== 0 ? (
           <Fragment>
             <PriceTitle price={estate?.price}>Price :</PriceTitle>

@@ -9,28 +9,42 @@ import Typography from "@mui/material/Typography";
 import { ProductType } from "@/app/core/types";
 const TitleSection = ({ estate }: { estate: ProductType | undefined }) => {
   let currentDate = moment(estate?.insertDate).format("Do MMMM");
-  console.log('complete');
+  console.log("complete");
   return (
     <BoxComponent>
-      <Box className="flex justify-between text-slate-600 items-center">
-        <Box className="flex gap-3">
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        className="text-slate-600"
+      >
+        <Box display={"flex"} gap={1.5}>
           <AccessTimeIcon />
           <time dateTime={currentDate}>{currentDate}</time>
         </Box>
-        <Box className="flex gap-10">
+        <Box display={"flex"} gap={5}>
           <CopyHere className="flex gap-2" siteURL={process.env.SITE_URL!}>
-            <ShareOutlinedIcon className="text-xl" />
-            <Box component={"span"} className="text-sm hidden sm:inline-block">
+            <ShareOutlinedIcon sx={{ fontSize: "20px" }} />
+            <Box
+              component={"span"}
+              sx={{ display: { sm: "inline-block", xs: "none" } }}
+              fontSize={14}
+            >
               Share Estate
             </Box>
           </CopyHere>
           <Save />
         </Box>
       </Box>
-      <Box className="text-slate-400 py-2 px-1">
+      <Box px={0.5} py={1} className="text-slate-400">
         {estate?.status + " " + estate?.houseStyle + " , " + estate?.city}
       </Box>
-      <Typography variant="h2" className="text-slate-800 font-bold text-3xl">
+      <Typography
+        variant="h2"
+        fontSize={30}
+        fontWeight={700}
+        className="text-slate-800"
+      >
         {estate?.estateName}
       </Typography>
     </BoxComponent>

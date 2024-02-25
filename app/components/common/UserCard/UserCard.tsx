@@ -8,9 +8,17 @@ import { UserType } from "@/app/core/types";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { ConnectionMapper } from "./resources";
-
-const badgeClassNames =
-  "flex justify-center p-2 text-base gap-1 text-slate-500 bg-purple-100/80 rounded-xl w-full items-center";
+const badgeStyles = {
+  display: "flex",
+  justifyContent: "center",
+  p: 1,
+  fontSize: "16px",
+  gap: 0.5,
+  borderRadius: "12px",
+  width: "100%",
+  alignItems: "center",
+};
+const badgeClassNames = "text-slate-500 bg-purple-100/80";
 const UserCard = ({
   user,
   isSticky,
@@ -26,70 +34,93 @@ const UserCard = ({
     >
       <Box className="flex gap-2 justify-between items-center">
         <Box className="w-1/3">
-          <Box className={badgeClassNames}>
+          <Box sx={badgeStyles} className={badgeClassNames}>
             <AddHomeOutlined fontSize="small" />
             {user?.userEstates}
           </Box>
           <Typography
             variant="body2"
-            className="text-slate-400  text-center my-1"
+            textAlign={"center"}
+            my={0.5}
+            className="text-slate-400"
           >
             Estates
           </Typography>
         </Box>
-        <Box className="w-1/3">
+        <Box width={1 / 3}>
           <Image
             src={user?.userImage ? user.userImage : ""}
             alt={user?.userName + " profile"}
             className="rounded-xl border-4 w-36 h-40 object-cover border-purple-50 -mt-16 bg-slate-200"
           />
         </Box>
-        <Box className="w-1/3">
-          <Box className={badgeClassNames}>
+        <Box width={1 / 3}>
+          <Box sx={badgeStyles} className={badgeClassNames}>
             <ReviewsOutlined fontSize="small" />
             {user?.userRate}
           </Box>
           <Typography
             variant="body2"
-            className="text-slate-400 text-center my-1"
+            textAlign={"center"}
+            my={0.5}
+            className="text-slate-400"
           >
             User Rate
           </Typography>
         </Box>
       </Box>
 
-      <Box className="my-2 flex justify-center gap-3 items-center">
+      <Box
+        display={"flex"}
+        my={1}
+        justifyContent={"center"}
+        gap={1.5}
+        alignItems={"center"}
+      >
         <Typography
           variant="h2"
-          className="text-2xl text-slate-500 font-semibold"
+          fontSize={24}
+          fontWeight={600}
+          className="text-slate-500"
         >
           {user?.userName}
         </Typography>
         {user?.isVerified && (
-          <Verified fontSize="small" className="text-purple-500 mt-[2px]" />
+          <Verified
+            fontSize="small"
+            sx={{ mt: "2px" }}
+            className="text-purple-500"
+          />
         )}
       </Box>
       <Typography
         variant="caption"
-        className="text-lg block text-center text-slate-500"
+        fontSize={18}
+        display={"block"}
+        textAlign={"center"}
+        className="text-slate-500"
       >
         Relator
       </Typography>
-      <Box className="flex justify-center my-2 px-10 gap-5">
+      <Box display={"flex"} justifyContent={"center"} my={1} px={5} gap={2.5}>
         {ConnectionMapper(user?.linksConnection!)}
       </Box>
 
-      <Box className="flex border rounded-md my-2">
+      <Box display={"flex"} border={1} my={1} borderRadius={"6px"}>
         <Typography
           variant="button"
-          className="bg-purple-300/50 rounded-md text-purple-950 opacity-80 px-5 py-3"
+          sx={{ opacity: 0.8, px: 2.5, py: 1.5, borderRadius: "6px" }}
+          className="bg-purple-300/50 text-purple-950"
         >
           About Me
         </Typography>
       </Box>
       <Typography
         variant="body2"
-        className="text-base text-slate-500 py-3 px-5"
+        fontSize={16}
+        py={1.5}
+        px={2.5}
+        className="text-slate-500 "
       >
         {user?.userAbout}
       </Typography>
@@ -97,7 +128,16 @@ const UserCard = ({
         component={"a"}
         href={"mailto:" + user?.emailAddress}
         variant="button"
-        className="bg-purple-300/50 cursor-pointer block text-center rounded-md text-purple-950 hover:opacity-100 hover:bg-purple-300/70 opacity-80 px-5 py-3"
+        sx={{
+          display: "block",
+          textAlign: "center",
+          opacity: 0.8,
+          px: 2.5,
+          py: 1.5,
+          borderRadius: "6px",
+          cursor: "pointer",
+        }}
+        className="bg-purple-300/50 text-purple-950 hover:opacity-100 hover:bg-purple-300/70"
       >
         Email To {user?.userName}
       </Typography>

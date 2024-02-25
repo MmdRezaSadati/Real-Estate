@@ -6,7 +6,10 @@ const BoxComponent = ({ children, className }: BoxTypes) => {
     <Box
       className={`${
         className ? className : ""
-      } bg-white shadow-md my-3 shadow-slate-300/50 p-7 rounded-lg`}
+      } bg-white shadow-md shadow-slate-300/50`}
+      my={1.5}
+      p={3.5}
+      borderRadius={2}
     >
       {children}
     </Box>
