@@ -46,7 +46,8 @@ const SliderRange = () => {
     <Fragment>
       <Typography
         variant="caption"
-        className="text-slate-900 whitespace-nowrap"
+        whiteSpace={"nowrap"}
+        className="text-slate-900"
       >
         price: {valuetext(value2[0]) + " to " + valuetext(value2[1])}
       </Typography>

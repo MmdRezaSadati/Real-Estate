@@ -11,13 +11,42 @@ const FilterBox = () => {
   return (
     <>
       <EstatesForm>
-        <Box className="md:w-2/6 lg:w-3/6 shadow-md w-full rounded-xl overflow-hidden">
+        <Box
+          sx={{
+            width: {
+              md: 2 / 6,
+              lg: 3 / 6,
+              xs: "100%",
+            },
+          }}
+          borderRadius={3}
+          overflow={"hidden"}
+          className="shadow-md"
+        >
           <SearchInput />
         </Box>
-        <Box className="md:w-2/5 lg:w-1/5 w-full rounded-xl px-10">
+        <Box
+          sx={{
+            width: {
+              md: 2 / 5,
+              lg: 1 / 5,
+              xs: "100%",
+            },
+          }}
+          borderRadius={3}
+          px={5}
+        >
           <SliderRange />
         </Box>
-        <Box className="md:w-1/5 w-full rounded-xl">
+        <Box
+          sx={{
+            width: {
+              md: 1 / 5,
+              xs: "100%",
+            },
+          }}
+          borderRadius={3}
+        >
           <SelectHouseStyle />
         </Box>
       </EstatesForm>

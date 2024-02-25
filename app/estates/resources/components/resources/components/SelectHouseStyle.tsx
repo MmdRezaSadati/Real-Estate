@@ -47,7 +47,8 @@ const SelectHouseStyle = () => {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        className="w-full text-slate-800"
+        sx={{ width: "100%" }}
+        className="text-slate-800"
         value={style}
         label={"House Style"}
         defaultValue={searchParams.get("houseStyle") || ""!}

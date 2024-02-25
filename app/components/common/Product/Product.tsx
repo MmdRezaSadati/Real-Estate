@@ -23,13 +23,14 @@ const Product = ({
   return (
     <Card
       sx={{
-        width: { sm: 350, xs: "100%" },
+        width: { sm: 400, xs: "100%" },
         textAlign: "left",
         maxWidth: 400,
         position: "relative",
+        overflow: "visible",
         minHeight: 384,
         p: 1.5,
-        borderRadius: 24,
+        borderRadius: 3,
       }}
       className={`scale-x-90 group shadow-2xl shadow-slate-300 hover:shadow-slate-400
        hover:-translate-y-2 transition-all text-slate-100 bg-white ${
@@ -43,23 +44,42 @@ const Product = ({
         imageSrc={imageSrc}
         view={view}
       />
-      <CardContent className="text-slate-800 p-3">
-        <Box className="flex gap-1">
+      <CardContent sx={{ p: 1.5 }} className="text-slate-800">
+        <Box display={"flex"} gap={0.5}>
           <Box
             component={"span"}
-            className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10"
+            display={"inline-flex"}
+            alignItems={"center"}
+            borderRadius={1}
+            px={1}
+            py={0.5}
+            fontSize={"12px"}
+            fontWeight={500}
+            className="bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-700/10"
           >
             for {status}
           </Box>{" "}
           <Box
             component={"span"}
-            className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"
+            display={"inline-flex"}
+            alignItems={"center"}
+            borderRadius={1}
+            px={1}
+            py={0.5}
+            fontSize={"12px"}
+            fontWeight={500}
+            className="bg-red-50 font-medium text-red-700 ring-1 ring-inset ring-red-600/10"
           >
             {houseStyle}
           </Box>
         </Box>
-        <Box className="flex items-center gap-2">
-          <Box component={"span"} className="flex items-center gap-1">
+        <Box display={"flex"} alignItems={"center"} gap={1}>
+          <Box
+            component={"span"}
+            display={"flex"}
+            alignItems={"center"}
+            gap={0.5}
+          >
             <StarIcon className="text-yellow-500" /> {rate}
           </Box>
           <Link
@@ -72,7 +92,12 @@ const Product = ({
         </Box>
         <Typography
           variant="body2"
-          className="text-xl sm:whitespace-nowrap font-semibold mt-1"
+          sx={{
+            fontSize: "20px",
+            whiteSpace: { sm: "nowrap" },
+            fontWeight: 600,
+            mt: 0.5,
+          }}
         >
           <Box component={"span"} className="text-blue-700">
             {price > 0 ? "$" + SeparationNumberString(price) : "an argument"}
@@ -80,14 +105,18 @@ const Product = ({
           {price !== 0 && status == "Rent"
             ? " per Month"
             : status == "Buy" && " For Buy"}
-          <Box display={""} component={"span"} className="text-base">
+          <Box display={""} component={"span"} fontSize={"16px"}>
             {"  "}| {SeparationNumberString(landSize)} SQFT {"  "}
-            <Typography variant="caption" className="inline-block font-bold">
+            <Typography
+              variant="caption"
+              display={"inline-block"}
+              fontWeight={700}
+            >
               | in {city}
             </Typography>
           </Box>
         </Typography>
-        <Typography variant="body2" className="text-xl font-bold">
+        <Typography variant="body2" fontSize={20} fontWeight={700}>
           {rooms} bedrooms
         </Typography>
       </CardContent>

@@ -1,16 +1,19 @@
 "use client";
+import Box from "@mui/material/Box";
 import { ReactNode } from "react";
 
 const EstatesForm = ({ children }: { children: ReactNode }) => {
   return (
-    <form
-      className="form-control justify-center"
+    <Box
+      justifyContent={"center"}
+      component={"form"}
+      className="form-control"
       onSubmit={(values) => {
         console.log(values);
       }}
     >
       {children}
-    </form>
+    </Box>
   );
 };
 
