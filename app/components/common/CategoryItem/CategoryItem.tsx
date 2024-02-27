@@ -29,7 +29,7 @@ const CategoryItem = ({ imageSrc, title, href }: CategoryItemType) => {
           className="w-full relative z-10 h-32 rounded-t-[250px] rounded-b-xl"
         />
         <Link href={href}>
-          <Typography variant="h3" className="text-lg relative z-10">
+          <Typography variant="h5" className="text-lg relative z-10">
             {title}
           </Typography>
         </Link>
@@ -39,7 +39,14 @@ const CategoryItem = ({ imageSrc, title, href }: CategoryItemType) => {
             type="submit"
             LinkComponent={Link}
             href={href}
-            className="bg-blue-700 relative z-10 rounded-xl w-full h-full hover:bg-blue-800 text-white"
+            sx={{
+              position: "relative",
+              zIndex: 0,
+              borderRadius: "12px",
+              width: "100%",
+              height: "100%",
+            }}
+            className="!bg-blue-700 hover:!bg-blue-800 !text-white"
           >
             <Box
               component={"span"}

@@ -36,7 +36,7 @@ const ViewsCount = ({ estateName, imageSrc, id, view }: OfficialType) => {
         alignItems={"center"}
         className="bg-black/35"
       >
-        <CameraAltOutlinedIcon fontSize="small" />{" "}
+        <CameraAltOutlinedIcon className="text-slate-100" fontSize="small" />{" "}
         <Box component={"span"} pb={"1px"}>
           {imageSrc.length}
         </Box>
@@ -78,7 +78,7 @@ const ViewsCount = ({ estateName, imageSrc, id, view }: OfficialType) => {
             top: 0,
             right: 0,
           }}
-          className="bg-blue-700 hover:bg-blue-800 text-white hover:bg-opacity-90"
+          className="!bg-blue-700 hover:!bg-blue-800 !text-white hover:!bg-opacity-90"
         >
           Visit
         </Button>

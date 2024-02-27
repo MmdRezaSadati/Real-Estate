@@ -21,7 +21,15 @@ const SearchBox = ({
         />
         <Button
           type="submit"
-          className="bg-blue-700 absolute rounded-none sm:px-5  h-full top-0 right-0 hover:bg-blue-800 text-white hover:bg-opacity-90"
+          sx={{
+            px: { sm: 2.5 },
+            top: 0,
+            right: 0,
+            height: "100%",
+            position: "absolute",
+            borderRadius: 0,
+          }}
+          className="!bg-blue-700 hover:!bg-blue-800 !text-white hover:!bg-opacity-90"
         >
           <Box component={"span"} className="font-semibold tracking-[0.25em]">
             SEARCH
