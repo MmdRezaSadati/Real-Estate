@@ -74,7 +74,7 @@ const HeroSection = () => {
         sx={{
           display: "flex",
           flexDirection: { sm: "row", xs: "column" },
-          px: "1.25rem",
+          px: { sm: "112px", xs: "1.25rem" },
           justifyContent: "center",
           gap: "40px",
           paddingTop: "56px",
