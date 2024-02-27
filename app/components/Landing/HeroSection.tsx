@@ -74,7 +74,7 @@ const HeroSection = () => {
         sx={{
           display: "flex",
           flexDirection: { sm: "row", xs: "column" },
-          px: "112px",
+          px: "1.25rem",
           justifyContent: "center",
           gap: "40px",
           paddingTop: "56px",
@@ -153,7 +153,7 @@ const HeroSection = () => {
               shadow="big-image-shadow"
               width={"max-w-[500px] lg:w-[500px] w-[350px]"}
               height={"lg:h-[700px] h-[500px]"}
-              className="lg:bottom-0"
+              className="lg:!bottom-0"
               src={BigImageSrc}
               alt={"home 1"}
             />

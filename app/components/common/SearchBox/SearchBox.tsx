@@ -13,7 +13,10 @@ const SearchBox = ({
         isHero ? "bg-slate-300" : "bg-slate-100"
       } w-full rounded-xl ${className ? className : ""}`}
     >
-      <form className="overflow-hidden relative rounded-lg flex justify-between bg-white">
+      <Box
+        component={"form"}
+        className="overflow-hidden relative rounded-lg flex justify-between bg-white"
+      >
         <input
           type="text"
           className="focus:outline-0 p-3 w-full text-slate-900"
@@ -35,7 +38,7 @@ const SearchBox = ({
             SEARCH
           </Box>
         </Button>
-      </form>
+      </Box>
     </Box>
   );
 };

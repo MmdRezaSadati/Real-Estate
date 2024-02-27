@@ -69,7 +69,7 @@ const SectionFour = () => {
         sx={{
           display: "flex",
           pt: 7,
-          px: 14,
+          px: "1.25rem",
           justifyContent: "space-between",
           alignItems: "center",
           gap: 2.5,

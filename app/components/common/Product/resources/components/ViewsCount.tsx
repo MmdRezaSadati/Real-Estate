@@ -37,7 +37,7 @@ const ViewsCount = ({ estateName, imageSrc, id, view }: OfficialType) => {
         className="bg-black/35"
       >
         <CameraAltOutlinedIcon className="text-slate-100" fontSize="small" />{" "}
-        <Box component={"span"} pb={"1px"}>
+        <Box component={"span"} className="text-slate-100" pb={"1px"}>
           {imageSrc.length}
         </Box>
       </Box>
