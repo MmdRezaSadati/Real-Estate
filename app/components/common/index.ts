@@ -4,6 +4,7 @@ import AutoTypeWriter from "./AutoTypeWriter/AutoTypeWriter";
 import BigImage from "./BigImage/BigImage";
 import BlurMenu from "./BlurMenu/BlurMenu";
 import CopyHere from "./CopyHere/CopyHere";
+import Copyright from "./CopyRight/CopyRight";
 import Product from "./Product/Product";
 import SearchBox from "./SearchBox/SearchBox";
 import SearchInput from "./SearchInput/SearchInput";
@@ -20,6 +21,7 @@ export {
   SuperSale,
   SearchBox,
   BlurMenu,
+  Copyright,
   Product,
   UserCard,
   SearchInput,
