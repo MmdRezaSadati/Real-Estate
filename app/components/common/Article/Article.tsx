@@ -10,9 +10,14 @@ const Article = ({ post }: ArticleType) => {
   return (
     <Card
       key={post.title}
-      className="flex flex-col overflow-hidden w-96 rounded-lg hover:shadow-xl shadow-lg"
+      display={"flex"}
+      flexDirection={"column"}
+      overflow={"hidden"}
+      width={"384px"}
+      borderRadius={2}
+      className="hover:shadow-xl shadow-lg"
     >
-      <Box className="flex-shrink-0">
+      <Box flexShrink={0}>
         <Image
           width={384}
           height={256}
@@ -21,10 +26,18 @@ const Article = ({ post }: ArticleType) => {
           alt=""
         />
       </Box>
-      <CardContent className="flex flex-1 flex-col justify-between bg-white p-6">
-        <Box className="flex-1">
+      <CardContent
+        display={"flex"}
+        flex={1}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        className="bg-white p-6"
+      >
+        <Box flex={1}>
           <Typography
             variant="body2"
+            fontSize={14}
+            fonw
             className="text-sm font-medium text-indigo-600"
           >
             <Link
