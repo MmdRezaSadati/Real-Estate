@@ -12,9 +12,9 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Copyright } from "@/app/components/common";
-import Form from "./resources/components/Form";
-
+import { Copyright, FieldInput } from "@/app/components/common";
+import { FormComponent } from "./resources";
+import GoogleIcon from "@mui/icons-material/Google";
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const SignUp = () => {
@@ -32,52 +32,22 @@ const SignUp = () => {
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" sx={{ color: "#222" }} variant="h5">
+        <Typography component="h1" my={1} sx={{ color: "#222" }} variant="h5">
           Sign up
         </Typography>
-        <Form>
+        <FormComponent>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="given-name"
-                name="firstName"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
+              <FieldInput name="firstName" label="First Name" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="family-name"
-              />
+              <FieldInput name="lastName" label="Last Name" />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
+              <FieldInput name="email" label="Email Address" />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-              />
+              <FieldInput name="email" label="Email Address" />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -103,7 +73,17 @@ const SignUp = () => {
               </MUILink>
             </Grid>
           </Grid>
-        </Form>
+          <Grid>
+            <Button
+              fullWidth
+              sx={{ my: 1 }}
+              variant="outlined"
+              startIcon={<GoogleIcon />}
+            >
+              Sign In with Google
+            </Button>
+          </Grid>
+        </FormComponent>
       </Box>
       <Copyright sx={{ mt: 5 }} />
     </Container>
