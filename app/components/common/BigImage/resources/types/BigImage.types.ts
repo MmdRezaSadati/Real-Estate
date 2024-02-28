@@ -1,3 +1,4 @@
+import { SxProps } from "@mui/material";
 import { StaticImageData } from "next/image";
 
 interface BigIMageType {
@@ -7,5 +8,6 @@ interface BigIMageType {
   width: string;
   height: string;
   shadow?: string;
+  sx?: SxProps;
 }
 export default BigIMageType;

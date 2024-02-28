@@ -13,7 +13,10 @@ const SearchBox = ({
         isHero ? "bg-slate-300" : "bg-slate-100"
       } w-full rounded-xl ${className ? className : ""}`}
     >
-      <form className="overflow-hidden relative rounded-lg flex justify-between bg-white">
+      <Box
+        component={"form"}
+        className="overflow-hidden relative rounded-lg flex justify-between bg-white"
+      >
         <input
           type="text"
           className="focus:outline-0 p-3 w-full text-slate-900"
@@ -21,13 +24,21 @@ const SearchBox = ({
         />
         <Button
           type="submit"
-          className="bg-blue-700 absolute rounded-none sm:px-5  h-full top-0 right-0 hover:bg-blue-800 text-white hover:bg-opacity-90"
+          sx={{
+            px: { sm: 2.5 },
+            top: 0,
+            right: 0,
+            height: "100%",
+            position: "absolute",
+            borderRadius: 0,
+          }}
+          className="!bg-blue-700 hover:!bg-blue-800 !text-white hover:!bg-opacity-90"
         >
           <Box component={"span"} className="font-semibold tracking-[0.25em]">
             SEARCH
           </Box>
         </Button>
-      </form>
+      </Box>
     </Box>
   );
 };

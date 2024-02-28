@@ -106,7 +106,13 @@ const UserCard = ({
         {ConnectionMapper(user?.linksConnection!)}
       </Box>
 
-      <Box display={"flex"} border={1} my={1} borderRadius={"6px"}>
+      <Box
+        display={"flex"}
+        border={1}
+        my={1}
+        borderRadius={"6px"}
+        className="!border-transparent"
+      >
         <Typography
           variant="button"
           sx={{ opacity: 0.8, px: 2.5, py: 1.5, borderRadius: "6px" }}

@@ -105,7 +105,7 @@ const DetailSection = () => {
                     width: { md: "64px", xs: "40px" },
                     height: { md: "40px", xs: "56px" },
                   }}
-                  className="group-hover:fill-white fill-blue-600 "
+                  className="group-hover:fill-white !fill-blue-600 "
                 />
                 <Typography
                   variant="h3"

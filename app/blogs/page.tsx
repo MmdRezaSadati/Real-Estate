@@ -77,7 +77,6 @@ const Blogs = () => {
         <Box className="md:w-1/5 w-full">
           <Typography
             variant="button"
-            type="submit"
             className="bg-blue-700 cursor-pointer flex justify-center items-center h-full rounded px-5 w-full hover:bg-blue-800 text-white"
           >
             Search

@@ -39,7 +39,7 @@ const SectionFour = () => {
       >
         <item.icon
           sx={{ width: 56, height: 56 }}
-          className="fill-blue-600 group-hover:fill-white"
+          className="!fill-blue-600 group-hover:!fill-white"
         />
       </Box>
       <Box>
@@ -69,7 +69,7 @@ const SectionFour = () => {
         sx={{
           display: "flex",
           pt: 7,
-          px: 14,
+          px: {sm:'112px',xs:"1.25rem"},
           justifyContent: "space-between",
           alignItems: "center",
           gap: 2.5,

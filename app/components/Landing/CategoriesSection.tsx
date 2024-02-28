@@ -34,7 +34,7 @@ const CategoriesSection = () => {
           display: "flex",
           flexDirection: { md: "row", xs: "column-reverse" },
           pt: 7,
-          px: 14,
+          px: { sm: "112px", xs: "1.25rem" },
           justifyContent: "center",
           gap: 7,
         }}

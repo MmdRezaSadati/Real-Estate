@@ -15,7 +15,7 @@ const Prompt = () => {
       zIndex={10}
       left={8}
       fontWeight={700}
-      className="group-hover:animate-bounceAnimation bg-sky-950"
+      className="group-hover:animate-bounceAnimation text-slate-100 bg-sky-950"
     >
       <AutoAwesomeIcon />
       Prompt

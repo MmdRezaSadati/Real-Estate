@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import { NAVBAR_ITEMS } from "@/app/core/constants";
 import MenuToggle from "./MenuToggle";
+import MUILink from "@mui/material/Link";
 const Navbar = () => {
   return (
     <Box
@@ -46,18 +47,19 @@ const Navbar = () => {
           color="info"
           variant="contained"
           component={Link}
-          href={"#"}
+          href={"/auth/signIn"}
           sx={{
             letterSpacing: "0.35em",
             scale: { md: 1, sm: 0.75 },
           }}
         >
-          <Box component={"span"} fontWeight={900}>
-            visit now
-          </Box>
+          Sign In
         </Button>
       </Box>
-      <Box sx={{display:{lg:'none',xs:"flex"}}} className="lg:hidden flex">
+      <Box
+        sx={{ display: { lg: "none", xs: "flex" } }}
+        className="lg:hidden flex"
+      >
         <MenuToggle />
       </Box>
     </Box>
