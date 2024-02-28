@@ -1,26 +1,26 @@
 "use client";
-import Box from "@mui/material/Box";
-import { Form, Formik } from "formik";
-import { Fragment, ReactNode, useState } from "react";
 import { app } from "@/firebaseConfig";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { AlertComponent } from "@/app/components/common";
-import { Error } from "@mui/icons-material";
+import { Error, Google } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import React, { Fragment, useState } from "react";
+import AlertComponent from "../Alert/AlertComponent";
 import jwt from "jsonwebtoken";
-const FormComponent = ({ children }: { children: ReactNode }) => {
-  const auth = getAuth(app);
-  // const [data, setData] = useState();
+const GoogleSignIn = () => {
   const [wrongData, setWrongData] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [loading, setLoading] = useState(false);
-  const handleSubmit = (event: any) => {
-    console.log(event.email);
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+  const handleClick = () => {
+    console.log("clicked");
     setLoading(true);
-    signInWithEmailAndPassword(auth, event.email, event.password)
+    signInWithPopup(auth, googleProvider)
       .then((response) => {
         responseHandler(response);
       })
       .catch((err) => {
+        console.log(err);
         catchHandler();
       });
   };
@@ -51,7 +51,7 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
       {loading && <AlertComponent status={"info"}>loading...</AlertComponent>}
       {wrongData && (
         <AlertComponent icon={<Error />} status={"error"}>
-          Email or Password is Wrong
+          Something wrong!
         </AlertComponent>
       )}
       {isLogin && (
@@ -59,19 +59,17 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
           Login Account , Redirect To Landing Page
         </AlertComponent>
       )}
-      <Box
-        component={Formik}
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        onSubmit={handleSubmit}
-        sx={{ mt: 1 }}
+      <Button
+        fullWidth
+        sx={{ my: 1 }}
+        onClick={handleClick}
+        variant="outlined"
+        startIcon={<Google />}
       >
-        <Box component={Form}>{children}</Box>
-      </Box>
+        Sign In with Google
+      </Button>
     </Fragment>
   );
 };
 
-export default FormComponent;
+export default GoogleSignIn;

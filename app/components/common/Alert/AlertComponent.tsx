@@ -7,16 +7,12 @@ const AlertComponent = ({
   children,
   status,
 }: {
-  icon: any;
+  icon?: any;
   children: ReactNode;
   status: any;
 }) => {
   return (
-    <Alert
-      className="alert-toast"
-      icon={icon}
-      severity={status}
-    >
+    <Alert className="alert-toast" icon={icon} severity={status}>
       {children}
     </Alert>
   );

@@ -11,9 +11,9 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Copyright, FieldInput } from "@/app/components/common";
+import { Copyright, FieldInput, GoogleSignIn } from "@/app/components/common";
 import Link from "next/link";
-import { FormComponent, SignInGoogle } from "./resources";
+import { FormComponent } from "./resources";
 import { Field } from "formik";
 const SignIn = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -77,7 +77,7 @@ const SignIn = () => {
               </MUILink>
             </Grid>
           </Grid>
-          <SignInGoogle />
+          <GoogleSignIn />
         </FormComponent>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />

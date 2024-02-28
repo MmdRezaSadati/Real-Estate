@@ -9,7 +9,15 @@ import {
 import { MainContainer } from "@/app/components/partials";
 import { UserCard } from "@/app/components/common";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Metadata } from "next";
+export const generateMetadata = async ({ params }: any): Promise<Metadata> => {
+  const id = params.id;
+  const estate = ESTATES.find((estate) => estate.id === id);
+  return {
+    title: estate?.estateName,
+    description: estate?.caption,
+  };
+};
 const EstatesDetails = ({ params: { id } }: { params: { id: string } }) => {
   const estate = ESTATES.find((estate) => estate.id === id);
   const user = USERS.find((user) => user.userId === estate?.userId!);

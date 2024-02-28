@@ -6,6 +6,7 @@ import BlurMenu from "./BlurMenu/BlurMenu";
 import CopyHere from "./CopyHere/CopyHere";
 import Copyright from "./CopyRight/CopyRight";
 import FieldInput from "./FiedlInput/FieldInput";
+import GoogleSignIn from "./GoogleSignIn/GoogleSignIn";
 import Product from "./Product/Product";
 import SearchBox from "./SearchBox/SearchBox";
 import SearchInput from "./SearchInput/SearchInput";
@@ -16,6 +17,7 @@ import XTitle from "./XTitle/XTitle";
 export {
   Article,
   BigImage,
+  GoogleSignIn,
   XTitle,
   AutoTypeWriter,
   CopyHere,

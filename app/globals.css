@@ -45,7 +45,7 @@
 
   .alert-toast {
     animation: alert-toast 0.5s;
-    @apply absolute top-5 md:w-1/3 sm:w-2/3 w-full text-center md:left-1/3 sm:left-1/4 left-0;
+    @apply fixed top-5 md:w-1/3 !shadow-md sm:w-2/3 w-full z-50 text-center md:left-1/3 sm:left-1/4 left-0;
   }
 
   .form-control {

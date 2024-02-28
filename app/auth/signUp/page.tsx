@@ -12,7 +12,7 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Copyright, FieldInput } from "@/app/components/common";
+import { Copyright, FieldInput, GoogleSignIn } from "@/app/components/common";
 import { FormComponent } from "./resources";
 import GoogleIcon from "@mui/icons-material/Google";
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -37,17 +37,11 @@ const SignUp = () => {
         </Typography>
         <FormComponent>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <FieldInput name="firstName" label="First Name" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FieldInput name="lastName" label="Last Name" />
-            </Grid>
             <Grid item xs={12}>
               <FieldInput name="email" label="Email Address" />
             </Grid>
             <Grid item xs={12}>
-              <FieldInput name="email" label="Email Address" />
+              <FieldInput name="password" label="Password" />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -74,14 +68,7 @@ const SignUp = () => {
             </Grid>
           </Grid>
           <Grid>
-            <Button
-              fullWidth
-              sx={{ my: 1 }}
-              variant="outlined"
-              startIcon={<GoogleIcon />}
-            >
-              Sign In with Google
-            </Button>
+            <GoogleSignIn />
           </Grid>
         </FormComponent>
       </Box>
