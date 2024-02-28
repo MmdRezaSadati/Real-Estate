@@ -11,10 +11,10 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Copyright } from "@/app/components/common";
+import { Copyright, FieldInput } from "@/app/components/common";
 import Link from "next/link";
-import Form from "./resources/components/Form";
-
+import { FormComponent, SignInGoogle } from "./resources";
+import { Field } from "formik";
 const SignIn = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,35 +39,23 @@ const SignIn = () => {
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography sx={{ color: "#222" }} component="h1" variant="h5">
+        <Typography sx={{ color: "#222" }} my={1} component="h1" variant="h5">
           Sign in
         </Typography>
-        <Form>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            sx={{ color: "#222" }}
-            label="Remember me"
-          />
+        <FormComponent>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <FieldInput name="email" label="Email Address" />
+            </Grid>
+            <Grid item xs={12}>
+              <FieldInput name="password" />
+            </Grid>
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              sx={{ color: "#222", ml: 1 }}
+              label="Remember me"
+            />
+          </Grid>
           <Button
             type="submit"
             fullWidth
@@ -89,7 +77,8 @@ const SignIn = () => {
               </MUILink>
             </Grid>
           </Grid>
-        </Form>
+          <SignInGoogle />
+        </FormComponent>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
