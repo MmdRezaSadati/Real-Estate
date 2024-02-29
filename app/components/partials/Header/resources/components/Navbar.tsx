@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { NAVBAR_ITEMS } from "@/app/core/constants";
 import MenuToggle from "./MenuToggle";
 import MUILink from "@mui/material/Link";
+import ProfileBTN from "./ProfileBTN";
 const Navbar = () => {
   return (
     <Box
@@ -43,18 +44,7 @@ const Navbar = () => {
             contact
           </Box>
         </Button>
-        <Button
-          color="info"
-          variant="contained"
-          component={Link}
-          href={"/auth/signIn"}
-          sx={{
-            letterSpacing: "0.35em",
-            scale: { md: 1, sm: 0.75 },
-          }}
-        >
-          Sign In
-        </Button>
+        <ProfileBTN/>
       </Box>
       <Box
         sx={{ display: { lg: "none", xs: "flex" } }}

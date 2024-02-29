@@ -37,6 +37,12 @@ const SignUp = () => {
         </Typography>
         <FormComponent>
           <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <FieldInput name="firstName" label="First Name" />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FieldInput name="lastName" label="Lst Name" />
+            </Grid>
             <Grid item xs={12}>
               <FieldInput name="email" label="Email Address" />
             </Grid>
