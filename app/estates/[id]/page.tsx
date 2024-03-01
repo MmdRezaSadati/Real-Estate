@@ -14,8 +14,8 @@ export const generateMetadata = async ({ params }: any): Promise<Metadata> => {
   const id = params.id;
   const estate = ESTATES.find((estate) => estate.id === id);
   return {
-    title: estate?.estateName,
-    description: estate?.caption,
+    title: estate?.estateName + " - Estata Bode",
+    description: estate?.caption, 
   };
 };
 const EstatesDetails = ({ params: { id } }: { params: { id: string } }) => {

@@ -2,11 +2,12 @@
 import { Button } from "@mui/material";
 import Link from "next/link";
 import React, { Fragment, useEffect, useState } from "react";
-import AccountCircleOutlined from '@mui/icons-material/AccountCircleOutlined';
+import AccountCircleOutlined from "@mui/icons-material/AccountCircleOutlined";
+import { customLocalStorage } from "@/app/core/utils";
 const ProfileBTN = () => {
   const [isLogin, setIsLogin] = useState(true);
   useEffect(() => {
-    const login = localStorage.getItem("userToken");
+    const login = customLocalStorage.getWithExpiry("userToken");
     setIsLogin(login ? true : false);
   }, []);
 
@@ -14,7 +15,7 @@ const ProfileBTN = () => {
     <Fragment>
       {isLogin ? (
         <div></div>
-        ) : (
+      ) : (
         <Button
           color="info"
           variant="contained"

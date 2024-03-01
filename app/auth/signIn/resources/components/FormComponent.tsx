@@ -7,6 +7,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { AlertComponent } from "@/app/components/common";
 import { Error } from "@mui/icons-material";
 import jwt from "jsonwebtoken";
+import { customLocalStorage } from "@/app/core/utils";
 const FormComponent = ({ children }: { children: ReactNode }) => {
   const auth = getAuth(app);
   // const [data, setData] = useState();
@@ -33,12 +34,12 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
   };
   const responseHandler = (response: any) => {
     const user = response.user;
-    const token = jwt.sign({ uid: user.uid, email: user.email }, "userToken", {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign({ uid: user.uid, email: user.email }, "userToken");
+    const expireTime = 12 * 60 * 60 * 1000;
     console.log("response.user", response.user);
     console.log("token", token);
-    localStorage.setItem("userToken", token);
+    // window.localStorage.setItem("userToken", JSON.stringify(localStorageToken));
+    customLocalStorage.setItem("userToken", token, expireTime);
     setLoading(false);
     setIsLogin(true);
     setTimeout(() => {
