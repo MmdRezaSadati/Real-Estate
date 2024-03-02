@@ -30,7 +30,7 @@ const SignIn = () => {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          my: 8,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -80,7 +80,7 @@ const SignIn = () => {
           <GoogleSignIn />
         </FormComponent>
       </Box>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
+      {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
     </Container>
   );
 };
