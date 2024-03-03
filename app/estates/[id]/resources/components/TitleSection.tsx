@@ -9,7 +9,6 @@ import Typography from "@mui/material/Typography";
 import { ProductType } from "@/app/core/types";
 const TitleSection = ({ estate }: { estate: ProductType | undefined }) => {
   let currentDate = moment(estate?.insertDate).format("Do MMMM");
-  console.log("complete");
   return (
     <BoxComponent>
       <Box

@@ -1,9 +1,6 @@
-import { Fragment } from "react";
-import { Product } from "../components/common";
-import { MainContainer } from "../components/partials";
+import { MainContainer, PageLayout } from "../components/partials";
 
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import { filterEstates, FilterBox, SearchParamsType } from "./resources";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import { estateMapper } from "../core/utils";
@@ -27,7 +24,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
   });
 
   return (
-    <Fragment>
+    <PageLayout>
       <MainContainer>
         <FilterBox />
       </MainContainer>
@@ -38,6 +35,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
         py={5}
         className="bg-corbeau-500 bg-opacity-10"
       >
+        
         <HomeWorkOutlinedIcon
           sx={{
             position: "absolute",
@@ -62,7 +60,7 @@ const Estates = ({ searchParams }: { searchParams: SearchParamsType }) => {
           {estateMapper(ESTATES_FILTERED)}
         </MainContainer>
       </Box>
-    </Fragment>
+    </PageLayout>
   );
 };
 

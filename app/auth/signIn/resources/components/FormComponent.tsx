@@ -1,7 +1,7 @@
 "use client";
 import Box from "@mui/material/Box";
 import { Form, Formik } from "formik";
-import { Fragment, ReactNode, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 import { app } from "@/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { AlertComponent } from "@/app/components/common";
@@ -14,6 +14,8 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
   const [wrongData, setWrongData] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [hasToken, setHasToken] = useState(false);
   const handleSubmit = (event: any) => {
     console.log(event.email);
     setLoading(true);
@@ -35,6 +37,7 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
   const responseHandler = (response: any) => {
     const user = response.user;
     const token = jwt.sign({ uid: user.uid, email: user.email }, "userToken");
+
     const expireTime = 12 * 60 * 60 * 1000;
     console.log("response.user", response.user);
     console.log("token", token);
@@ -47,6 +50,10 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
       window.location.pathname = "/";
     }, 2000);
   };
+
+  useEffect(() => {
+    customLocalStorage.getWithExpiry("userToken") && setIsLogin(true);
+  }, [isLogin]);
   return (
     <Fragment>
       {loading && <AlertComponent status={"info"}>loading...</AlertComponent>}

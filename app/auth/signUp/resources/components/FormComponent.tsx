@@ -1,12 +1,14 @@
 "use client";
 import Box from "@mui/material/Box";
 import { Form, Formik } from "formik";
-import { Fragment, ReactNode, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 import { app, dataBase } from "@/firebaseConfig";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { AlertComponent } from "@/app/components/common";
 import { Error } from "@mui/icons-material";
 import { addDoc, collection } from "firebase/firestore";
+import { redirect } from "next/navigation";
+import { customLocalStorage } from "@/app/core/utils";
 const FormComponent = ({ children }: { children: ReactNode }) => {
   //  section for firebase variables
   const auth = getAuth(app);
@@ -16,13 +18,16 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
   const [alreadyUsedEmail, setAlreadyUsedEmail] = useState(false);
   const [isCreated, setIsCreated] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [hasToken, setHasToken] = useState(false);
+
   const handleSubmit = (event: any) => {
     setData(event);
     console.log(event.email);
     setLoading(true);
     createUserWithEmailAndPassword(auth, event.email, event.password)
-      .then(() => {
-        addToDatabase(event);
+      .then((response) => {
+        addToDatabase(event, response.user.uid);
       })
       .catch(() => {
         catchHandler();
@@ -43,8 +48,9 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
       window.location.pathname = "/auth/signIn";
     }, 2000);
   };
-  const addToDatabase = (event: any) => {
+  const addToDatabase = (event: any, uid: string) => {
     addDoc(collectionRef, {
+      uid: uid,
       email: event.email,
       password: event.password,
       firstName: event.firstName,
@@ -57,6 +63,11 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
         console.log(err.message);
       });
   };
+
+  useEffect(() => {
+    customLocalStorage.getWithExpiry("userToken") && setHasToken(true);
+  }, [hasToken]);
+
   return (
     <Fragment>
       {alreadyUsedEmail && (
@@ -70,19 +81,23 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
           Created Account , Redirect To Sig In Page
         </AlertComponent>
       )}
-      <Box
-        component={Formik}
-        initialValues={{
-          email: "",
-          password: "",
-          firstName: "",
-          lastName: "",
-        }}
-        onSubmit={handleSubmit}
-        sx={{ mt: 1 }}
-      >
-        <Box component={Form}>{children}</Box>
-      </Box>
+      {hasToken ? (
+        redirect("/")
+      ) : (
+        <Box
+          component={Formik}
+          initialValues={{
+            email: "",
+            password: "",
+            firstName: "",
+            lastName: "",
+          }}
+          onSubmit={handleSubmit}
+          sx={{ mt: 1 }}
+        >
+          <Box component={Form}>{children}</Box>
+        </Box>
+      )}
     </Fragment>
   );
 };

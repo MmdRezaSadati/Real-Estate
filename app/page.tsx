@@ -6,16 +6,17 @@ import {
   SectionFive,
   SectionFour,
 } from "./components/Landing";
+import { PageLayout } from "./components/partials";
 
 const Home = () => {
   return (
-    <Fragment>
+    <PageLayout>
       <HeroSection />
       <CategoriesSection />
       <DetailSection />
       <SectionFour />
       <SectionFive />
-    </Fragment>
+    </PageLayout>
   );
 };
 export default Home;

@@ -15,6 +15,7 @@ import { Copyright, FieldInput, GoogleSignIn } from "@/app/components/common";
 import Link from "next/link";
 import { FormComponent } from "./resources";
 import { Field } from "formik";
+import { PageLayout } from "@/app/components/partials";
 const SignIn = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,62 +27,64 @@ const SignIn = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <Box
-        sx={{
-          my: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography sx={{ color: "#222" }} my={1} component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <FormComponent>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <FieldInput name="email" label="Email Address" />
+    <PageLayout>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            my: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography sx={{ color: "#222" }} my={1} component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <FormComponent>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <FieldInput name="email" label="Email Address" />
+              </Grid>
+              <Grid item xs={12}>
+                <FieldInput name="password" />
+              </Grid>
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                sx={{ color: "#222", ml: 1 }}
+                label="Remember me"
+              />
             </Grid>
-            <Grid item xs={12}>
-              <FieldInput name="password" />
+            <Button
+              type="submit"
+              fullWidth
+              className="!bg-blue-500 hover:!bg-blue-700"
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <MUILink component={Link} href="#" variant="body2">
+                  Forgot password?
+                </MUILink>
+              </Grid>
+              <Grid item>
+                <MUILink component={Link} href="/auth/signUp" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </MUILink>
+              </Grid>
             </Grid>
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              sx={{ color: "#222", ml: 1 }}
-              label="Remember me"
-            />
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            className="!bg-blue-500 hover:!bg-blue-700"
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <MUILink component={Link} href="#" variant="body2">
-                Forgot password?
-              </MUILink>
-            </Grid>
-            <Grid item>
-              <MUILink component={Link} href="/auth/signUp" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </MUILink>
-            </Grid>
-          </Grid>
-          <GoogleSignIn />
-        </FormComponent>
-      </Box>
-      {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
-    </Container>
+            <GoogleSignIn />
+          </FormComponent>
+        </Box>
+        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
+      </Container>
+    </PageLayout>
   );
 };
 export default SignIn;
