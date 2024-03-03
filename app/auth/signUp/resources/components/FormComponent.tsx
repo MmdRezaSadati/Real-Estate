@@ -55,6 +55,7 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
       password: event.password,
       firstName: event.firstName,
       lastName: event.lastName,
+      level: "member",
     })
       .then(() => {
         responseHandler();

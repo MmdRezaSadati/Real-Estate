@@ -8,6 +8,7 @@ import { AlertComponent } from "@/app/components/common";
 import { Error } from "@mui/icons-material";
 import jwt from "jsonwebtoken";
 import { customLocalStorage } from "@/app/core/utils";
+import { redirect } from "next/navigation";
 const FormComponent = ({ children }: { children: ReactNode }) => {
   const auth = getAuth(app);
   // const [data, setData] = useState();
@@ -52,8 +53,8 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    customLocalStorage.getWithExpiry("userToken") && setIsLogin(true);
-  }, [isLogin]);
+    customLocalStorage.getWithExpiry("userToken") && setHasToken(true);
+  }, [hasToken]);
   return (
     <Fragment>
       {loading && <AlertComponent status={"info"}>loading...</AlertComponent>}
@@ -67,17 +68,21 @@ const FormComponent = ({ children }: { children: ReactNode }) => {
           Login Account , Redirect To Landing Page
         </AlertComponent>
       )}
-      <Box
-        component={Formik}
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        onSubmit={handleSubmit}
-        sx={{ mt: 1 }}
-      >
-        <Box component={Form}>{children}</Box>
-      </Box>
+      {hasToken ? (
+        redirect("/")
+      ) : (
+        <Box
+          component={Formik}
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          onSubmit={handleSubmit}
+          sx={{ mt: 1 }}
+        >
+          <Box component={Form}>{children}</Box>
+        </Box>
+      )}
     </Fragment>
   );
 };

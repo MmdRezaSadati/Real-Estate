@@ -1,5 +1,7 @@
+"use client";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
+import { redirect, usePathname, useRouter } from "next/navigation";
 const SearchBox = ({
   isHero,
   className,
@@ -7,6 +9,11 @@ const SearchBox = ({
   isHero?: Boolean;
   className?: string;
 }) => {
+  const router = useRouter();
+  const handleChange = (event: any) => {
+    const value = event.target.value;
+    router.push("/estates?searchParams=" + value);
+  };
   return (
     <Box
       className={`p-2 ${
@@ -19,6 +26,9 @@ const SearchBox = ({
       >
         <input
           type="text"
+          onChange={(event) => {
+            handleChange(event);
+          }}
           className="focus:outline-0 p-3 w-full text-slate-900"
           placeholder="Address, School, City, Zip or Neighborhood"
         />

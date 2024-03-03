@@ -15,7 +15,6 @@ const ProfileBTN = () => {
     const login = customLocalStorage.getWithExpiry("userToken");
     if (login) {
       const user: any = jwt.decode(login);
-      console.log(user.uid);
       getDocs(collectionRef).then((data) => {
         const dataArr = data.docs.map((doc) => {
           return { ...doc.data() };
